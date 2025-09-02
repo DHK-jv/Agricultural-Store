@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Giới thiệu - Lê Phú Quới</title>
+	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+	<header>
+		<h1>Giới thiệu về Lê Phú Quới</h1>
+	</header>
+	<nav>
+    <a href="Home.html">Trang chủ</a>
+    <a href="About.html">Giới thiệu</a>
+    <a href="Product.html">Sản phẩm</a>
+    <a href="New.html">Tin tức</a>
+    <a href="Contact.html">Liên hệ</a>
+        <span class="nav-account-cart">
+            <a href="#" class="nav-account" title="Tài khoản">
+                <i class="fa fa-user"></i>
+            </a>
+            <a href="Car.html" class="nav-cart" title="Giỏ hàng">
+                <i class="fa fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </span>
+    </nav>
+	<div class="container">
+		<h2>Về chúng tôi</h2>
+		<p><b>Lê Phú Quới</b> là doanh nghiệp hàng đầu trong lĩnh vực cung cấp vật tư, vật liệu nông nghiệp tại Việt Nam. Chúng tôi tự hào mang đến giải pháp toàn diện cho nhà nông, góp phần nâng cao năng suất và chất lượng nông sản.</p>
+		<img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/greenhouse-2626796_1280.jpg" alt="Nông nghiệp hiện đại" style="width:100%;max-width:500px;display:block;margin:24px auto;border-radius:8px;">
+		<h3>Sứ mệnh</h3>
+		<p>Đồng hành cùng nhà nông, cung cấp sản phẩm chất lượng, dịch vụ tận tâm, góp phần phát triển nền nông nghiệp bền vững.</p>
+		<h3>Tầm nhìn</h3>
+		<p>Trở thành đối tác tin cậy số 1 của nông dân và doanh nghiệp nông nghiệp trên toàn quốc.</p>
+		<h3>Giá trị cốt lõi</h3>
+		<ul>
+			<li>Chất lượng sản phẩm là ưu tiên hàng đầu</li>
+			<li>Khách hàng là trung tâm</li>
+			<li>Đổi mới và phát triển bền vững</li>
+			<li>Trách nhiệm với cộng đồng và môi trường</li>
+		</ul>
+	</div>
+	<footer>
+		&copy; 2025 Lê Phú Quới. All rights reserved.
+	</footer>
+	<script>
+	function getCart() {
+		return JSON.parse(localStorage.getItem('cart') || '{}');
+	}
+	function updateCartCount() {
+		var cart = getCart();
+		var count = Object.values(cart).reduce((a,b) => a+b, 0);
+		document.getElementById('cart-count').innerText = count;
+	}
+	updateCartCount();
+	</script>
+</body>
+</html>

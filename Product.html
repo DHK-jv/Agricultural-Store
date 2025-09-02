@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sản phẩm - Lê Phú Quới</title>
+	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+	<header>
+		<h1>Sản phẩm</h1>
+	</header>
+	<nav>
+    <a href="Home.html">Trang chủ</a>
+    <a href="About.html">Giới thiệu</a>
+    <a href="Product.html">Sản phẩm</a>
+    <a href="New.html">Tin tức</a>
+    <a href="Contact.html">Liên hệ</a>
+        <span class="nav-account-cart">
+            <a href="#" class="nav-account" title="Tài khoản">
+                <i class="fa fa-user"></i>
+            </a>
+            <a href="Car.html" class="nav-cart" title="Giỏ hàng">
+                <i class="fa fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </span>
+    </nav>
+	<div class="container">
+		<h2>Danh mục sản phẩm</h2>
+		<div class="product-categories">
+			<button class="cat-btn active" onclick="filterCategory('all')">Tất cả</button>
+			<button class="cat-btn" onclick="filterCategory('xuatkhau')">Phân bón xuất khẩu</button>
+			<button class="cat-btn" onclick="filterCategory('huuco')">Phân bón hữu cơ</button>
+			<button class="cat-btn" onclick="filterCategory('npk')">Phân NPK</button>
+		</div>
+		<div class="products modern-products" id="product-list">
+			<!-- Phân bón xuất khẩu -->
+			<div class="product modern-product" data-cat="xuatkhau">
+				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu 1">
+				<h3>Phân bón xuất khẩu 1</h3>
+				<p>Phân bón cao cấp dành cho thị trường xuất khẩu.</p>
+				<button onclick="addToCart('Phân bón xuất khẩu 1')">Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="xuatkhau">
+				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu 2">
+				<h3>Phân bón xuất khẩu 2</h3>
+				<p>Phân bón xuất khẩu tăng năng suất cây trồng.</p>
+				<button onclick="addToCart('Phân bón xuất khẩu 2')">Thêm vào giỏ</button>
+			</div>
+			<!-- Phân bón hữu cơ -->
+			<div class="product modern-product" data-cat="huuco">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 1">
+				<h3>Phân bón hữu cơ 1</h3>
+				<p>Phân bón hữu cơ an toàn, thân thiện môi trường.</p>
+				<button onclick="addToCart('Phân bón hữu cơ 1')">Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="huuco">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 2">
+				<h3>Phân bón hữu cơ 2</h3>
+				<p>Phân bón hữu cơ giúp cải tạo đất, tăng sức đề kháng cho cây.</p>
+				<button onclick="addToCart('Phân bón hữu cơ 2')">Thêm vào giỏ</button>
+			</div>
+			<!-- Phân NPK -->
+			<div class="product modern-product" data-cat="npk">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK 1">
+				<h3>Phân NPK 1</h3>
+				<p>Phân NPK tổng hợp, cung cấp đầy đủ dinh dưỡng cho cây trồng.</p>
+				<button onclick="addToCart('Phân NPK 1')">Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="npk">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK 2">
+				<h3>Phân NPK 2</h3>
+				<p>Phân NPK chuyên dùng cho rau màu, cây ăn trái.</p>
+				<button onclick="addToCart('Phân NPK 2')">Thêm vào giỏ</button>
+			</div>
+		</div>
+	<style>
+	.product-categories {
+		display: flex;
+		gap: 16px;
+		margin: 18px 0 24px 0;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.cat-btn {
+		background: #fff;
+		color: #388e3c;
+		border: 2px solid #388e3c;
+		border-radius: 20px;
+		padding: 7px 22px;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background 0.2s, color 0.2s, border 0.2s;
+	}
+	.cat-btn.active, .cat-btn:hover {
+		background: #388e3c;
+		color: #fff;
+		border: 2px solid #43a047;
+	}
+	</style>
+	<script>
+	function filterCategory(cat) {
+		document.querySelectorAll('.cat-btn').forEach(btn=>btn.classList.remove('active'));
+		if(cat==='all') document.querySelector('.cat-btn').classList.add('active');
+		else document.querySelector('.cat-btn[onclick*="'+cat+'"').classList.add('active');
+		document.querySelectorAll('.modern-product').forEach(p=>{
+			if(cat==='all'||p.dataset.cat===cat) p.style.display='flex';
+			else p.style.display='none';
+		});
+	}
+	// Hiển thị tất cả mặc định
+	filterCategory('all');
+	</script>
+	<style>
+	.modern-products {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 32px;
+		justify-items: center;
+		margin-top: 32px;
+	}
+	.modern-product {
+		background: #fff;
+		border-radius: 18px;
+		box-shadow: 0 4px 24px rgba(56,142,60,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+		padding: 28px 20px 22px 20px;
+		width: 220px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: box-shadow 0.2s, transform 0.15s;
+		position: relative;
+	}
+	.modern-product:hover {
+		box-shadow: 0 8px 32px rgba(56,142,60,0.18), 0 2px 8px rgba(0,0,0,0.08);
+		transform: translateY(-6px) scale(1.03);
+	}
+	.modern-product img {
+		width: 110px;
+		height: 110px;
+		object-fit: cover;
+		border-radius: 12px;
+		margin-bottom: 16px;
+		box-shadow: 0 2px 8px rgba(56,142,60,0.07);
+		background: #f4f4f4;
+	}
+	.modern-product h3 {
+		margin: 0 0 8px 0;
+		font-size: 1.15rem;
+		color: #388e3c;
+		font-weight: bold;
+	}
+	.modern-product p {
+		font-size: 0.98rem;
+		color: #444;
+		margin-bottom: 14px;
+		min-height: 40px;
+	}
+	.modern-product button {
+		background: linear-gradient(90deg,#43a047 60%,#388e3c 100%);
+		color: #fff;
+		border: none;
+		border-radius: 6px;
+		padding: 9px 22px;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow: 0 1px 4px rgba(56,142,60,0.10);
+		transition: background 0.2s, transform 0.1s;
+	}
+	.modern-product button:hover {
+		background: linear-gradient(90deg,#388e3c 60%,#43a047 100%);
+		transform: scale(1.06);
+	}
+	@media (max-width: 900px) {
+		.modern-products {
+			gap: 18px;
+		}
+		.modern-product {
+			width: 46vw;
+			min-width: 170px;
+		}
+	}
+	@media (max-width: 600px) {
+		.modern-products {
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+		.modern-product {
+			width: 98vw;
+			min-width: 0;
+		}
+	}
+	</style>
+	</div>
+	<footer>
+		&copy; 2025 Lê Phú Quới. All rights reserved.
+	</footer>
+	<script>
+	function getCart() {
+		return JSON.parse(localStorage.getItem('cart') || '{}');
+	}
+	function setCart(cart) {
+		localStorage.setItem('cart', JSON.stringify(cart));
+	}
+	function updateCartCount() {
+		var cart = getCart();
+		var count = Object.values(cart).reduce((a,b) => a+b, 0);
+		document.getElementById('cart-count').innerText = count;
+	}
+	function addToCart(product) {
+		var cart = getCart();
+		cart[product] = (cart[product]||0) + 1;
+		setCart(cart);
+		updateCartCount();
+		renderCart();
+		alert('Đã thêm ' + product + ' vào giỏ hàng!');
+	}
+	function removeFromCart(product) {
+		var cart = getCart();
+		if(cart[product]) {
+			cart[product]--;
+			if(cart[product]<=0) delete cart[product];
+			setCart(cart);
+			updateCartCount();
+			renderCart();
+		}
+	}
+	function renderCart() {
+		var cart = getCart();
+		var html = '';
+		var keys = Object.keys(cart);
+		if(keys.length===0) {
+			html = '<p>Giỏ hàng trống.</p>';
+		} else {
+			html = '<table style="width:100%;border-collapse:collapse;">';
+			html += '<tr><th style="text-align:left;">Sản phẩm</th><th>Số lượng</th><th></th></tr>';
+			keys.forEach(function(item){
+				html += '<tr>'+
+					'<td>'+item+'</td>'+
+					'<td>'+cart[item]+'</td>'+
+					'<td><button onclick="removeFromCart(\''+item+'\')">Xóa</button></td>'+
+				'</tr>';
+			});
+			html += '</table>';
+		}
+		document.getElementById('cart-list').innerHTML = html;
+	}
+	updateCartCount();
+	renderCart();
+	</script>
+</body>
+</html>

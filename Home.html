@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lê Phú Quới - Vật Liệu Nông Nghiệp</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Creap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Công Ty Vật Liệu Nông Nghiệp Lê Phú Quới</h1>
+        <p>Chuyên cung cấp vật tư, vật liệu nông nghiệp chất lượng, giá tốt tại Việt Nam</p>
+    </header>
+    <nav>
+    <a href="Home.html">Trang chủ</a>
+    <a href="About.html">Giới thiệu</a>
+    <a href="Product.html">Sản phẩm</a>
+    <a href="New.html">Tin tức</a>
+    <a href="Contact.html">Liên hệ</a>
+        <span class="nav-account-cart">
+            <a href="#" class="nav-account" title="Tài khoản">
+                <i class="fa fa-user"></i>
+            </a>
+            <a href="Car.html" class="nav-cart" title="Giỏ hàng">
+                <i class="fa fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </span>
+    </nav>
+<div class="nav-search-bar">
+    <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
+        <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+    </nav>
+    <div class="banner-large" id="banner-large">
+        <div class="banner-featured active">
+            <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón hữu cơ cao cấp">
+            <div class="banner-featured-info">
+                <h2>Phân bón hữu cơ cao cấp</h2>
+                <p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
+                <button onclick="addToCart('Phân bón hữu cơ cao cấp')">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        <div class="banner-featured">
+            <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK tổng hợp">
+            <div class="banner-featured-info">
+                <h2>Phân NPK tổng hợp</h2>
+                <p>Bổ sung đầy đủ dưỡng chất cho cây phát triển toàn diện.</p>
+                <button onclick="addToCart('Phân NPK tổng hợp')">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        <div class="banner-featured">
+            <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu">
+            <div class="banner-featured-info">
+                <h2>Phân bón xuất khẩu</h2>
+                <p>Chất lượng quốc tế, phù hợp cho cây trồng xuất khẩu.</p>
+                <button onclick="addToCart('Phân bón xuất khẩu')">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        <button class="banner-btn left" onclick="prevBannerLarge()">&#10094;</button>
+        <button class="banner-btn right" onclick="nextBannerLarge()">&#10095;</button>
+    </div>
+    <div class="container">
+        <section class="featured-section">
+            <h2 style="text-align:center;color:#388e3c;margin-bottom:24px;">Sản phẩm tiêu biểu</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 2">
+                    <div class="featured-info">
+                        <h3>Phân bón hữu cơ 2</h3>
+                        <p>Thân thiện môi trường, tăng sức đề kháng cho cây trồng.</p>
+                        <button onclick="addToCart('Phân bón hữu cơ 2')">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/greenhouse-2626796_1280.jpg" alt="Phân NPK chuyên dụng">
+                    <div class="featured-info">
+                        <h3>Phân NPK chuyên dụng</h3>
+                        <p>Phù hợp cho nhiều loại cây trồng, giúp cây phát triển khỏe mạnh.</p>
+                        <button onclick="addToCart('Phân NPK chuyên dụng')">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/tractor-1867282_1280.jpg" alt="Phân bón hữu cơ 3">
+                    <div class="featured-info">
+                        <h3>Phân bón hữu cơ 3</h3>
+                        <p>Giúp cây phát triển bền vững, tăng năng suất lâu dài.</p>
+                        <button onclick="addToCart('Phân bón hữu cơ 3')">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <script>
+    // Banner lớn chuyển động
+    let currentBannerLarge = 0;
+    function showBannerLarge(idx) {
+        const banners = document.querySelectorAll('.banner-featured');
+        if (!banners.length) return;
+        banners.forEach((b,i)=>b.classList.toggle('active',i===idx));
+    }
+    function prevBannerLarge() {
+        const banners = document.querySelectorAll('.banner-featured');
+        currentBannerLarge = (currentBannerLarge-1+banners.length)%banners.length;
+        showBannerLarge(currentBannerLarge);
+    }
+    function nextBannerLarge() {
+        const banners = document.querySelectorAll('.banner-featured');
+        currentBannerLarge = (currentBannerLarge+1)%banners.length;
+        showBannerLarge(currentBannerLarge);
+    }
+    setInterval(()=>{nextBannerLarge();},4000);
+    document.addEventListener('DOMContentLoaded',()=>{
+        showBannerLarge(currentBannerLarge);
+    });
+    // Cập nhật số lượng khi tải trang
+    updateCartCount();
+    </script>
+        <section id="sanpham">
+            <h2>Sản phẩm tiêu biểu</h2>
+            <div class="products modern-products">
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón">
+                    <h3>Phân bón</h3>
+                    <p>Phân bón hữu cơ, vô cơ giúp cây trồng phát triển khỏe mạnh.</p>
+                    <button onclick="addToCart('Phân bón')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Hạt giống">
+                    <h3>Hạt giống</h3>
+                    <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+                    <button onclick="addToCart('Hạt giống')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/greenhouse-2626796_1280.jpg" alt="Màng phủ nông nghiệp">
+                    <h3>Màng phủ nông nghiệp</h3>
+                    <p>Màng phủ giúp giữ ẩm, hạn chế cỏ dại, tăng năng suất cây trồng.</p>
+                    <button onclick="addToCart('Màng phủ nông nghiệp')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/net-1867287_1280.jpg" alt="Lưới che nắng">
+                    <h3>Lưới che nắng</h3>
+                    <p>Lưới che nắng, lưới chắn côn trùng bảo vệ cây trồng hiệu quả.</p>
+                    <button onclick="addToCart('Lưới che nắng')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn">
+                    <h3>Dụng cụ làm vườn</h3>
+                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
+                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+    </div>
+        <footer class="main-footer">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>FAQ</h4>
+                    <ul>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Store Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Client Services</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Delivery Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Đăng ký nhận tin khuyến mãi và kiến thức nông nghiệp mới nhất!</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đã đăng ký email!');">
+                        <input type="email" placeholder="Nhập email của bạn" required>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="footer-social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-cert">
+                    <img src="https://cdn.hstatic.net/200000722513/100/Logo/bo-cong-thuong.png" alt="Bộ Công Thương" class="footer-cert-logo">
+                </div>
+                <div class="footer-payments">
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-jcb"></i>
+                </div>
+                <div class="footer-copyright">
+                    <span>&copy; 2025 Lê Phú Quới. Cung cấp bởi lephuquoi.com</span>
+                </div>
+            </div>
+        </footer>
+    <script>
+    // Giỏ hàng đơn giản lưu trên localStorage
+    function getCart() {
+        return JSON.parse(localStorage.getItem('cart') || '{}');
+    }
+    function setCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function updateCartCount() {
+        var cart = getCart();
+        var count = Object.values(cart).reduce((a,b) => a+b, 0);
+        document.getElementById('cart-count').innerText = count;
+    }
+    function addToCart(product) {
+        var cart = getCart();
+        cart[product] = (cart[product]||0) + 1;
+        setCart(cart);
+        updateCartCount();
+        alert('Đã thêm ' + product + ' vào giỏ hàng!');
+    }
+    // Banner hiệu ứng
+    let currentBanner = 0;
+    function showBanner(idx) {
+        const imgs = document.querySelectorAll('.banner-img');
+        if (!imgs.length) return;
+        imgs.forEach((img,i)=>img.classList.toggle('active',i===idx));
+    }
+    function prevBanner() {
+        const imgs = document.querySelectorAll('.banner-img');
+        currentBanner = (currentBanner-1+imgs.length)%imgs.length;
+        showBanner(currentBanner);
+    }
+    function nextBanner() {
+        const imgs = document.querySelectorAll('.banner-img');
+        currentBanner = (currentBanner+1)%imgs.length;
+        showBanner(currentBanner);
+    }
+    setInterval(()=>{nextBanner();},4000);
+    document.addEventListener('DOMContentLoaded',()=>{
+        showBanner(currentBanner);
+    });
+    // Cập nhật số lượng khi tải trang
+    updateCartCount();
+    </script>
+</body>
+</html>
