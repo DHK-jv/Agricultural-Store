@@ -11,23 +11,24 @@
 <body>
     <header>
         <div style="display:flex;align-items:center;justify-content:center;gap:18px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909765.png" alt="Logo" style="height:54px;width:54px;object-fit:contain;display:inline-block;vertical-align:middle;">
             <h1 style="margin:0;">Công Ty Vật Liệu Nông Nghiệp Lê Phú Quới</h1>
         </div>
         <p>Chuyên cung cấp vật tư, vật liệu nông nghiệp chất lượng, giá tốt tại Việt Nam</p>
     </header>
-    <nav>
-    <a href="Home.html">Trang chủ</a>
-    <a href="About.html">Giới thiệu</a>
-    <a href="Product.html">Sản phẩm</a>
-    <a href="New.html">Tin tức</a>
-    <a href="Contact.html">Liên hệ</a>
-        <span class="nav-account-cart">
-            <a href="#" class="nav-account" title="Tài khoản">
-                <i class="fa fa-user"></i>
+    <nav style="display:flex;align-items:center;justify-content:center;position:relative;">
+        <div style="display:flex;gap:8px;justify-content:center;flex:1;">
+            <a href="Home.html">Trang chủ</a>
+            <a href="About.html">Giới thiệu</a>
+            <a href="Product.html">Sản phẩm</a>
+            <a href="New.html">Tin tức</a>
+            <a href="Contact.html">Liên hệ</a>
+        </div>
+        <span class="nav-account-cart" style="display:flex;align-items:center;gap:8px;position:absolute;right:10px;top:50%;transform:translateY(-50%);">
+            <a href="#" class="nav-account" title="Tài khoản" style="background:none;padding:0;margin:0;box-shadow:none;border:none;">
+                <i class="fa fa-user" style="font-size:18px;color:#388e3c;"></i>
             </a>
-            <a href="Car.html" class="nav-cart" title="Giỏ hàng">
-                <i class="fa fa-shopping-cart"></i>
+            <a href="Car.html" class="nav-cart" title="Giỏ hàng" style="background:none;padding:0;margin:0;box-shadow:none;border:none;position:relative;">
+                <i class="fa fa-shopping-cart" style="font-size:18px;color:#388e3c;"></i>
                 <span id="cart-count">0</span>
             </a>
         </span>
@@ -64,8 +65,8 @@
                 <button onclick="addToCart('Phân bón xuất khẩu')">Thêm vào giỏ hàng</button>
             </div>
         </div>
-        <button class="banner-btn left" onclick="prevBannerLarge()">&#10094;</button>
-        <button class="banner-btn right" onclick="nextBannerLarge()">&#10095;</button>
+    <button class="banner-btn left" onclick="prevBannerLarge()" style="background:none;border:none;box-shadow:none;padding:0 10px;font-size:22px;color:#388e3c;top:50%;transform:translateY(-50%);left:10px;position:absolute;">&#10094;</button>
+    <button class="banner-btn right" onclick="nextBannerLarge()" style="background:none;border:none;box-shadow:none;padding:0 10px;font-size:22px;color:#388e3c;top:50%;transform:translateY(-50%);right:10px;position:absolute;">&#10095;</button>
     </div>
     <div class="container">
         <section class="featured-section">
@@ -163,6 +164,27 @@
                     <div class="price">95.000đ</div>
                     <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
                 </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn">
+                    <h3>Dụng cụ làm vườn</h3>
+                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
+                    <div class="price">95.000đ</div>
+                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn">
+                    <h3>Dụng cụ làm vườn</h3>
+                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
+                    <div class="price">95.000đ</div>
+                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
+                </div>
+                <div class="product modern-product">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn">
+                    <h3>Dụng cụ làm vườn</h3>
+                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
+                    <div class="price">95.000đ</div>
+                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
+                </div>
             </div>
         </section>
     </div>
@@ -198,9 +220,6 @@
                     <a href="#" class="footer-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="footer-social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
                     <a href="#" class="footer-social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="footer-cert">
-                    <img src="https://cdn.hstatic.net/200000722513/100/Logo/bo-cong-thuong.png" alt="Bộ Công Thương" class="footer-cert-logo">
                 </div>
                 <div class="footer-payments">
                     <i class="fab fa-cc-mastercard"></i>

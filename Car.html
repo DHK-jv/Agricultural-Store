@@ -5,160 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - Lê Phú Quới</title>
     <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Car.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Hiệu ứng fade-in cho sản phẩm */
-        .cart-list tr {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInRow 0.5s forwards;
-        }
-        .cart-list tr.animated {
-            opacity: 1;
-            transform: none;
-        }
-        @keyframes fadeInRow {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-        /* Hiệu ứng hover highlight dòng */
-        .cart-list tr:hover {
-            background: #f1f8e9;
-            transition: background 0.2s;
-        }
-        /* Toast notification */
-        .toast {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            background: #388e3c;
-            color: #fff;
-            padding: 16px 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            font-size: 1rem;
-            opacity: 0;
-            pointer-events: none;
-            z-index: 9999;
-            transition: opacity 0.4s;
-        }
-        .toast.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        /* Nút hiệu ứng */
-        .cart-qty-btn, .cart-remove, .cart-checkout-btn {
-            transition: transform 0.1s;
-        }
-        .cart-qty-btn:active, .cart-remove:active, .cart-checkout-btn:active {
-            transform: scale(0.92);
-        }
-        .cart-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            padding: 32px 24px 24px 24px;
-        }
-        .cart-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 24px;
-            color: #388e3c;
-        }
-        .cart-list {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .cart-list th, .cart-list td {
-            padding: 12px 8px;
-            border-bottom: 1px solid #e0e0e0;
-            text-align: left;
-        }
-        .cart-list th {
-            color: #388e3c;
-            font-size: 1.1rem;
-        }
-        .cart-img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 8px;
-            background: #f4f4f4;
-        }
-        .cart-qty {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .cart-qty-btn {
-            background: #e0e0e0;
-            border: none;
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .cart-qty-btn:hover {
-            background: #bdbdbd;
-        }
-        .cart-remove {
-            color: #e53935;
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .cart-summary {
-            margin-top: 32px;
-            text-align: right;
-        }
-        .cart-summary strong {
-            font-size: 1.2rem;
-            color: #388e3c;
-        }
-        .cart-empty {
-            text-align: center;
-            color: #888;
-            font-size: 1.1rem;
-            margin: 40px 0;
-        }
-        .cart-checkout-btn {
-            background: #388e3c;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 12px 32px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 16px;
-            transition: background 0.2s;
-        }
-        .cart-checkout-btn:hover {
-            background: #2d6a4f;
-        }
-    </style>
+
 </head>
 <body>
     <header>
         <h1>Giỏ hàng</h1>
     </header>
-    <nav>
-    <a href="Home.html">Trang chủ</a>
-    <a href="About.html">Giới thiệu</a>
-    <a href="Product.html">Sản phẩm</a>
-    <a href="New.html">Tin tức</a>
-    <a href="Contact.html">Liên hệ</a>
-    <a href="Car.html" style="float:right;position:relative;">
-            <i class="fa fa-shopping-cart"></i>
-            <span id="cart-count" style="background:#e53935;color:#fff;border-radius:50%;padding:2px 7px;font-size:12px;position:absolute;top:-8px;right:-12px;">0</span>
-        </a>
+    <nav style="display:flex;align-items:center;justify-content:center;position:relative;">
+        <div style="display:flex;gap:8px;justify-content:center;flex:1;">
+            <a href="Home.html">Trang chủ</a>
+            <a href="About.html">Giới thiệu</a>
+            <a href="Product.html">Sản phẩm</a>
+            <a href="New.html">Tin tức</a>
+            <a href="Contact.html">Liên hệ</a>
+        </div>
+        <span class="nav-account-cart" style="display:flex;align-items:center;gap:8px;position:absolute;right:10px;top:50%;transform:translateY(-50%);">
+            <a href="#" class="nav-account" title="Tài khoản" style="background:none;padding:0;margin:0;box-shadow:none;border:none;">
+                <i class="fa fa-user" style="font-size:18px;color:#388e3c;"></i>
+            </a>
+            <a href="Car.html" class="nav-cart" title="Giỏ hàng" style="background:none;padding:0;margin:0;box-shadow:none;border:none;position:relative;">
+                <i class="fa fa-shopping-cart" style="font-size:18px;color:#388e3c;"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </span>
     </nav>
     <div class="cart-container">
         <div class="cart-title">Giỏ hàng của bạn</div>
