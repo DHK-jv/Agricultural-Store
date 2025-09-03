@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sản phẩm - Lê Phú Quới</title>
-	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="Home.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -36,44 +36,126 @@
 			<button class="cat-btn" onclick="filterCategory('npk')">Phân NPK</button>
 		</div>
 		<div class="products modern-products" id="product-list">
-			<!-- Phân bón xuất khẩu -->
+			<!-- 18 sản phẩm mẫu, đủ các loại -->
 			<div class="product modern-product" data-cat="xuatkhau">
 				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu 1">
 				<h3>Phân bón xuất khẩu 1</h3>
 				<p>Phân bón cao cấp dành cho thị trường xuất khẩu.</p>
-				<button onclick="addToCart('Phân bón xuất khẩu 1')">Thêm vào giỏ</button>
+				<div class="price">180.000đ</div>
+				<button onclick="addToCart('Phân bón xuất khẩu 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="xuatkhau">
 				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu 2">
 				<h3>Phân bón xuất khẩu 2</h3>
 				<p>Phân bón xuất khẩu tăng năng suất cây trồng.</p>
-				<button onclick="addToCart('Phân bón xuất khẩu 2')">Thêm vào giỏ</button>
+				<div class="price">175.000đ</div>
+				<button onclick="addToCart('Phân bón xuất khẩu 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
-			<!-- Phân bón hữu cơ -->
+			<div class="product modern-product" data-cat="xuatkhau">
+				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón xuất khẩu 3">
+				<h3>Phân bón xuất khẩu 3</h3>
+				<p>Chất lượng quốc tế, phù hợp cây trồng xuất khẩu.</p>
+				<div class="price">190.000đ</div>
+				<button onclick="addToCart('Phân bón xuất khẩu 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 1">
 				<h3>Phân bón hữu cơ 1</h3>
 				<p>Phân bón hữu cơ an toàn, thân thiện môi trường.</p>
-				<button onclick="addToCart('Phân bón hữu cơ 1')">Thêm vào giỏ</button>
+				<div class="price">120.000đ</div>
+				<button onclick="addToCart('Phân bón hữu cơ 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 2">
 				<h3>Phân bón hữu cơ 2</h3>
-				<p>Phân bón hữu cơ giúp cải tạo đất, tăng sức đề kháng cho cây.</p>
-				<button onclick="addToCart('Phân bón hữu cơ 2')">Thêm vào giỏ</button>
+				<p>Giúp cải tạo đất, tăng sức đề kháng cho cây.</p>
+				<div class="price">125.000đ</div>
+				<button onclick="addToCart('Phân bón hữu cơ 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
-			<!-- Phân NPK -->
+			<div class="product modern-product" data-cat="huuco">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 3">
+				<h3>Phân bón hữu cơ 3</h3>
+				<p>Thân thiện môi trường, tăng năng suất lâu dài.</p>
+				<div class="price">130.000đ</div>
+				<button onclick="addToCart('Phân bón hữu cơ 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="huuco">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/vegetables-1867286_1280.jpg" alt="Phân bón hữu cơ 4">
+				<h3>Phân bón hữu cơ 4</h3>
+				<p>Giúp cây phát triển bền vững, tăng năng suất.</p>
+				<div class="price">128.000đ</div>
+				<button onclick="addToCart('Phân bón hữu cơ 4')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
 			<div class="product modern-product" data-cat="npk">
 				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK 1">
 				<h3>Phân NPK 1</h3>
-				<p>Phân NPK tổng hợp, cung cấp đầy đủ dinh dưỡng cho cây trồng.</p>
-				<button onclick="addToCart('Phân NPK 1')">Thêm vào giỏ</button>
+				<p>Phân NPK tổng hợp, cung cấp đầy đủ dinh dưỡng.</p>
+				<div class="price">95.000đ</div>
+				<button onclick="addToCart('Phân NPK 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="npk">
 				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK 2">
 				<h3>Phân NPK 2</h3>
-				<p>Phân NPK chuyên dùng cho rau màu, cây ăn trái.</p>
-				<button onclick="addToCart('Phân NPK 2')">Thêm vào giỏ</button>
+				<p>Chuyên dùng cho rau màu, cây ăn trái.</p>
+				<div class="price">98.000đ</div>
+				<button onclick="addToCart('Phân NPK 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="npk">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Phân NPK 3">
+				<h3>Phân NPK 3</h3>
+				<p>Bổ sung dưỡng chất cho cây phát triển toàn diện.</p>
+				<div class="price">100.000đ</div>
+				<button onclick="addToCart('Phân NPK 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<!-- Sản phẩm khác -->
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/greenhouse-2626796_1280.jpg" alt="Màng phủ nông nghiệp">
+				<h3>Màng phủ nông nghiệp</h3>
+				<p>Giữ ẩm, hạn chế cỏ dại, tăng năng suất cây trồng.</p>
+				<div class="price">80.000đ</div>
+				<button onclick="addToCart('Màng phủ nông nghiệp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/net-1867287_1280.jpg" alt="Lưới che nắng">
+				<h3>Lưới che nắng</h3>
+				<p>Lưới che nắng, chắn côn trùng bảo vệ cây trồng.</p>
+				<div class="price">60.000đ</div>
+				<button onclick="addToCart('Lưới che nắng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn">
+				<h3>Dụng cụ làm vườn</h3>
+				<p>Dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
+				<div class="price">95.000đ</div>
+				<button onclick="addToCart('Dụng cụ làm vườn')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg" alt="Phân bón hữu cơ cao cấp">
+				<h3>Phân bón hữu cơ cao cấp</h3>
+				<p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
+				<div class="price">200.000đ</div>
+				<button onclick="addToCart('Phân bón hữu cơ cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg" alt="Hạt giống cao cấp">
+				<h3>Hạt giống cao cấp</h3>
+				<p>Hạt giống chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+				<div class="price">45.000đ</div>
+				<button onclick="addToCart('Hạt giống cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/greenhouse-2626796_1280.jpg" alt="Màng phủ cao cấp">
+				<h3>Màng phủ cao cấp</h3>
+				<p>Màng phủ giữ ẩm, tăng năng suất cây trồng.</p>
+				<div class="price">110.000đ</div>
+				<button onclick="addToCart('Màng phủ cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+			</div>
+			<div class="product modern-product" data-cat="other">
+				<img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg" alt="Dụng cụ làm vườn đa năng">
+				<h3>Dụng cụ làm vườn đa năng</h3>
+				<p>Dụng cụ đa năng, tiện lợi cho mọi nhà vườn.</p>
+				<div class="price">120.000đ</div>
+				<button onclick="addToCart('Dụng cụ làm vườn đa năng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 		</div>
 	<style>
