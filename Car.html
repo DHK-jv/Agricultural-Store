@@ -46,18 +46,54 @@
     <script>
     // Danh sách sản phẩm mẫu (có thể lấy từ localStorage hoặc backend thực tế)
     const productImages = {
-        'Phân bón': 'https://cdn.pixabay.com/photo/2017/01/20/00/30/fertilizer-1994360_1280.jpg',
-        'Hạt giống': 'https://cdn.pixabay.com/photo/2016/11/29/09/32/seeds-1867297_1280.jpg',
-        'Màng phủ nông nghiệp': 'https://cdn.pixabay.com/photo/2017/08/10/07/32/greenhouse-2626796_1280.jpg',
-        'Lưới che nắng': 'https://cdn.pixabay.com/photo/2016/11/29/09/32/net-1867287_1280.jpg',
-        'Dụng cụ làm vườn': 'https://cdn.pixabay.com/photo/2016/11/29/09/32/gardening-1867289_1280.jpg'
+    'Phân bón': 'img/1.jpg',
+    'Hạt giống': 'img/1.jpg',
+    'Màng phủ nông nghiệp': 'img/1.jpg',
+    'Lưới che nắng': 'img/1.jpg',
+    'Dụng cụ làm vườn': 'img/1.jpg',
+    'Phân bón hữu cơ cao cấp': 'img/1.jpg',
+    'Phân NPK tổng hợp': 'img/1.jpg',
+    'Phân bón xuất khẩu': 'img/1.jpg',
+    'Phân bón hữu cơ 2': 'img/1.jpg',
+    'Phân NPK chuyên dụng': 'img/1.jpg',
+    'Phân bón hữu cơ 3': 'img/1.jpg',
+    'Dụng cụ làm vườn 95k': 'img/1.jpg',
+    'Phân bón xuất khẩu 1': 'img/1.jpg',
+    'Phân bón xuất khẩu 2': 'img/1.jpg',
+    'Phân bón xuất khẩu 3': 'img/1.jpg',
+    'Phân bón hữu cơ 1': 'img/1.jpg',
+    'Phân bón hữu cơ 4': 'img/1.jpg',
+    'Phân NPK 1': 'img/1.jpg',
+    'Phân NPK 2': 'img/1.jpg',
+    'Phân NPK 3': 'img/1.jpg',
+    'Dụng cụ làm vườn đa năng': 'img/1.jpg',
+    'Hạt giống cao cấp': 'img/1.jpg',
+    'Màng phủ cao cấp': 'img/1.jpg'
     };
     const productPrices = {
-        'Phân bón': 120000,
-        'Hạt giống': 35000,
-        'Màng phủ nông nghiệp': 90000,
-        'Lưới che nắng': 70000,
-        'Dụng cụ làm vườn': 50000
+    'Dụng cụ làm vườn đa năng': 120000,
+    'Hạt giống cao cấp': 45000,
+    'Lưới che nắng': 60000,
+    'Phân bón': 120000,
+    'Hạt giống': 35000,
+    'Màng phủ nông nghiệp': 90000,
+    'Lưới che nắng': 70000,
+    'Dụng cụ làm vườn': 50000,
+    'Phân bón hữu cơ cao cấp': 200000,
+    'Phân NPK tổng hợp': 100000,
+    'Phân bón xuất khẩu': 180000,
+    'Phân bón xuất khẩu 1': 180000,
+    'Phân bón xuất khẩu 2': 175000,
+    'Phân bón xuất khẩu 3': 190000,
+    'Phân bón hữu cơ 1': 120000,
+    'Phân bón hữu cơ 2': 125000,
+    'Phân bón hữu cơ 3': 130000,
+    'Phân bón hữu cơ 4': 128000,
+    'Phân NPK 1': 95000,
+    'Phân NPK 2': 98000,
+    'Phân NPK 3': 100000,
+    'Phân NPK chuyên dụng': 150000,
+    'Dụng cụ làm vườn 95k': 95000
     };
     function getCart() {
         return JSON.parse(localStorage.getItem('cart') || '{}');
@@ -115,17 +151,17 @@
             var img = productImages[item]||'';
             var subtotal = price*qty;
             total += subtotal;
-            html += '<tr style="animation-delay:'+(idx*0.07)+'s">'+
-                '<td><img src="'+img+'" class="cart-img"></td>'+
-                '<td>'+item+'</td>'+
-                '<td>'+price.toLocaleString('vi-VN')+' đ</td>'+
-                '<td class="cart-qty">'+
-                    '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',-1)">-</button>'+qty+
-                    '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',1)">+</button>'+
-                '</td>'+
-                '<td>'+(subtotal).toLocaleString('vi-VN')+' đ</td>'+
-                '<td><button class="cart-remove" onclick="removeFromCart(\''+item+'\')"><i class="fa fa-trash"></i></button></td>'+
-            '</tr>';
+                html += '<tr style="animation-delay:'+(idx*0.07)+'s">'+
+                    '<td><img src="'+img+'" class="cart-img"></td>'+
+                    '<td>'+item+'</td>'+
+                    '<td>'+price.toLocaleString('vi-VN')+' đ</td>'+
+                    '<td class="cart-qty" style="vertical-align:middle;">'+
+                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',-1)">-</button>'+qty+
+                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',1)">+</button>'+
+                    '</td>'+
+                    '<td>'+(subtotal).toLocaleString('vi-VN')+' đ</td>'+
+                    '<td><button class="cart-remove" onclick="removeFromCart(\''+item+'\')"><i class="fa fa-trash"></i></button></td>'+
+                '</tr>';
         });
         html += '</table>';
         document.getElementById('cart-list').innerHTML = html;

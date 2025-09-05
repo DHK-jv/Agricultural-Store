@@ -21,6 +21,13 @@
 	padding: 12px 8px;
 	border-bottom: 1px solid #e0e0e0;
 	text-align: left;
+	vertical-align: middle;
+}
+.cart-list td.cart-qty {
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 .cart-list th {
 	color: #388e3c;

@@ -106,6 +106,7 @@ nav a:hover, nav a.active {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 .search-form {
   display: flex;
@@ -187,6 +188,11 @@ nav a:hover, nav a.active {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  background: rgba(255,255,255,0.85);
+  padding: 24px 32px;
+  border-radius: 16px;
+  z-index: 3;
+  box-shadow: 0 2px 12px rgba(56,142,60,0.08);
 }
 .banner-featured-info h2 {
   color: #388e3c;

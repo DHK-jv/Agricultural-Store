@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán & Giám sát đơn hàng</title>
+    <link rel="stylesheet" href="Payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="Payment.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Thanh toán & Giám sát đơn hàng</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Trang chủ</a>
+        <a href="Product.html">Sản phẩm</a>
+        <a href="Car.html">Giỏ hàng</a>
+        <a href="Payment.html" class="active">Thanh toán</a>
+    </nav>
+    <div class="payment-container">
+        <section class="payment-form-section">
+            <h2>Thông tin thanh toán</h2>
+            <form class="payment-form">
+                <label>Họ tên</label>
+                <input type="text" required placeholder="Nhập họ tên">
+                <label>Địa chỉ giao hàng</label>
+                <input type="text" required placeholder="Nhập địa chỉ">
+                <label>Số điện thoại</label>
+                <input type="tel" required placeholder="Nhập số điện thoại">
+                <label>Phương thức thanh toán</label>
+                <select required>
+                    <option value="">Chọn phương thức</option>
+                    <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                    <option value="bank">Chuyển khoản ngân hàng</option>
+                </select>
+                <button type="button" class="payment-btn">Thanh toán</button>
+            </form>
+        </section>
+        <section class="tracking-section">
+            <h2>Giám sát đơn hàng</h2>
+            <form class="tracking-form" onsubmit="event.preventDefault(); trackOrder();">
+                <label>Mã đơn hàng</label>
+                <input type="text" id="order-id" required placeholder="Nhập mã đơn hàng">
+                <button type="submit" class="tracking-btn"><i class="fa fa-search"></i> Theo dõi</button>
+            </form>
+            <div id="tracking-result" class="tracking-result"></div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Lê Phú Quới. All rights reserved.
+    </footer>
+    <script>
+    function trackOrder() {
+        var orderId = document.getElementById('order-id').value.trim();
+        var result = document.getElementById('tracking-result');
+        if (!orderId) {
+            result.innerHTML = '<span style="color:#e53935;">Vui lòng nhập mã đơn hàng!</span>';
+            return;
+        }
+        // Demo trạng thái đơn hàng
+        var statusList = [
+            {step: 'Đã tiếp nhận', time: '09:00 05/09/2025'},
+            {step: 'Đang xử lý', time: '10:00 05/09/2025'},
+            {step: 'Đang giao hàng', time: '14:00 05/09/2025'},
+            {step: 'Đã giao', time: '16:30 05/09/2025'}
+        ];
+        var html = '<div class="tracking-status"><h3>Trạng thái đơn hàng: '+orderId+'</h3>';
+        html += '<ul>';
+        statusList.forEach(function(s, i) {
+            html += '<li><span class="step">'+s.step+'</span> <span class="time">'+s.time+'</span></li>';
+        });
+        html += '</ul></div>';
+        result.innerHTML = html;
+    }
+    </script>
+</body>
+</html>

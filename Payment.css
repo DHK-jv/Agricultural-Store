@@ -1,0 +1,136 @@
+/* Payment.css - Giao diện trang thanh toán & giám sát đơn hàng */
+body {
+  background: #f4f4f4;
+  color: #222;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: linear-gradient(90deg,#43a047 60%,#388e3c 100%);
+  color: #fff;
+  padding: 28px 0 16px 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(56,142,60,0.08);
+}
+nav {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1.5px solid #e0e0e0;
+  font-size: 1.05rem;
+  min-height: 48px;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+}
+nav a {
+  color: #388e3c;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+  border-radius: 0;
+  position: relative;
+  display: inline-block;
+}
+nav a.active, nav a:hover {
+  background: #e8f5e9;
+  color: #222;
+}
+.payment-container {
+  max-width: 900px;
+  margin: 36px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(56,142,60,0.08);
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.payment-form-section, .tracking-section {
+  flex: 1 1 350px;
+  min-width: 320px;
+}
+.payment-form h2, .tracking-section h2 {
+  color: #388e3c;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+.payment-form label, .tracking-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #388e3c;
+}
+.payment-form input, .payment-form select, .tracking-form input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 7px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.18s, box-shadow 0.18s;
+}
+.payment-btn, .tracking-btn {
+  background: linear-gradient(90deg,#43a047 60%,#388e3c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 32px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.10);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  margin-top: 8px;
+}
+.payment-btn:hover, .tracking-btn:hover {
+  background: linear-gradient(90deg,#388e3c 60%,#43a047 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 18px rgba(56,142,60,0.18);
+}
+.tracking-result {
+  margin-top: 18px;
+  font-size: 1.08rem;
+}
+.tracking-status h3 {
+  color: #388e3c;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.tracking-status ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tracking-status li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tracking-status .step {
+  color: #222;
+  font-weight: 500;
+}
+.tracking-status .time {
+  color: #888;
+  font-size: 0.98rem;
+}
+footer {
+  background: #388e3c;
+  color: #fff;
+  text-align: center;
+  padding: 18px 0 10px 0;
+  margin-top: 40px;
+  font-size: 1rem;
+  border-radius: 0 0 14px 14px;
+}
+@media (max-width: 900px) {
+  .payment-container { flex-direction: column; gap: 18px; }
+}
