@@ -67,7 +67,7 @@ nav a.active, nav a:hover {
   color: #388e3c;
 }
 .payment-form input, .payment-form select, .tracking-form input {
-  width: 100%;
+  width: 90%;
   padding: 10px 14px;
   margin-bottom: 16px;
   border-radius: 7px;
@@ -131,6 +131,8 @@ footer {
   font-size: 1rem;
   border-radius: 0 0 14px 14px;
 }
-@media (max-width: 900px) {
+/* Payment page custom styles */
+/* Removed styles for .order-section, #order-list, .payment-method-section, #payment-method-form, .payment-btn */
+@media (max-width: 1000px) {
   .payment-container { flex-direction: column; gap: 18px; }
 }

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - Lê Phú Quới</title>
-    <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="Car.css">
+    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/Car.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -15,7 +15,7 @@
     </header>
     <nav style="display:flex;align-items:center;justify-content:center;position:relative;">
         <div style="display:flex;gap:8px;justify-content:center;flex:1;">
-            <a href="Home.html">Trang chủ</a>
+            <a href="../Home.html">Trang chủ</a>
             <a href="About.html">Giới thiệu</a>
             <a href="Product.html">Sản phẩm</a>
             <a href="New.html">Tin tức</a>
@@ -46,27 +46,27 @@
     <script>
     // Danh sách sản phẩm mẫu (có thể lấy từ localStorage hoặc backend thực tế)
     const productImages = {
-    'Phân bón': 'img/1.jpg',
-    'Hạt giống': 'img/1.jpg',
-    'Màng phủ nông nghiệp': 'img/1.jpg',
-    'Lưới che nắng': 'img/1.jpg',
-    'Dụng cụ làm vườn': 'img/1.jpg',
-    'Phân bón hữu cơ cao cấp': 'img/1.jpg',
-    'Phân NPK tổng hợp': 'img/1.jpg',
-    'Phân bón xuất khẩu': 'img/1.jpg',
-    'Phân bón hữu cơ 2': 'img/1.jpg',
-    'Phân NPK chuyên dụng': 'img/1.jpg',
-    'Phân bón hữu cơ 3': 'img/1.jpg',
-    'Dụng cụ làm vườn 95k': 'img/1.jpg',
-    'Phân bón xuất khẩu 1': 'img/1.jpg',
-    'Phân bón xuất khẩu 2': 'img/1.jpg',
-    'Phân bón xuất khẩu 3': 'img/1.jpg',
-    'Phân bón hữu cơ 1': 'img/1.jpg',
-    'Phân bón hữu cơ 4': 'img/1.jpg',
-    'Phân NPK 1': 'img/1.jpg',
-    'Phân NPK 2': 'img/1.jpg',
-    'Phân NPK 3': 'img/1.jpg',
-    'Dụng cụ làm vườn đa năng': 'img/1.jpg',
+    'Phân bón': '../assets/1.jpg',
+    'Hạt giống': '../assets/1.jpg',
+    'Màng phủ nông nghiệp': '../assets/1.jpg',
+    'Lưới che nắng': '../assets/1.jpg',
+    'Dụng cụ làm vườn': '../assets/1.jpg',
+    'Phân bón hữu cơ cao cấp': '../assets/1.jpg',
+    'Phân NPK tổng hợp': '../assets/1.jpg',
+    'Phân bón xuất khẩu': '../assets/1.jpg',
+    'Phân bón hữu cơ 2': '../assets/1.jpg',
+    'Phân NPK chuyên dụng': '../assets/1.jpg',
+    'Phân bón hữu cơ 3': '../assets/1.jpg',
+    'Dụng cụ làm vườn 95k': '../assets/1.jpg',
+    'Phân bón xuất khẩu 1': '../assets/1.jpg',
+    'Phân bón xuất khẩu 2': '../assets/1.jpg',
+    'Phân bón xuất khẩu 3': '../assets/1.jpg',
+    'Phân bón hữu cơ 1': '../assets/1.jpg',
+    'Phân bón hữu cơ 4': '../assets/1.jpg',
+    'Phân NPK 1': '../assets/1.jpg',
+    'Phân NPK 2': '../assets/1.jpg',
+    'Phân NPK 3': '../assets/1.jpg',
+    'Dụng cụ làm vườn đa năng': '../assets/1.jpg',
     'Hạt giống cao cấp': 'img/1.jpg',
     'Màng phủ cao cấp': 'img/1.jpg'
     };
@@ -172,17 +172,7 @@
         }, 10);
     }
     function checkout() {
-        var cart = getCart();
-        if(Object.keys(cart).length===0) {
-            showToast('Giỏ hàng trống!');
-            return;
-        }
-        showToast('Cảm ơn bạn đã đặt hàng!');
-        setTimeout(()=>{
-            setCart({});
-            renderCart();
-            updateCartCount();
-        }, 1200);
+        window.location.href = "Payment.html";
     }
     updateCartCount();
     renderCart();
