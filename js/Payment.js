@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       toast.style.opacity = '0';
       setTimeout(function() { toast.remove(); }, 400);
-    }, 1800);
+    }, 1800);git 
   }
 });

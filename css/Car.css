@@ -6,6 +6,7 @@
 	border-radius: 10px;
 	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 	padding: 32px 24px 24px 24px;
+	box-sizing: border-box;
 }
 .cart-title {
 	font-size: 2rem;
@@ -17,47 +18,88 @@
 	width: 100%;
 	border-collapse: collapse;
 }
+
+/* --- make one single row border so the line is always aligned --- */
+.cart-list tr {
+	border-bottom: 1px solid #e0e0e0;
+}
 .cart-list th, .cart-list td {
 	padding: 12px 8px;
-	border-bottom: 1px solid #e0e0e0;
+	/* remove individual td borders (we use tr border) */
+	border-bottom: none;
 	text-align: left;
 	vertical-align: middle;
+	box-sizing: border-box;
 }
-.cart-list td.cart-qty {
-	vertical-align: middle;
-	text-align: center;
-	padding-top: 0;
-	padding-bottom: 0;
-}
+
+/* headings */
 .cart-list th {
 	color: #388e3c;
 	font-size: 1.1rem;
 }
+
+/* image */
 .cart-img {
 	width: 60px;
 	height: 60px;
 	object-fit: cover;
 	border-radius: 8px;
 	background: #f4f4f4;
+	display: block;
 }
+
+/* quantity cell: center and keep same height as image */
+.cart-list td.cart-qty {
+	text-align: center;
+	/* ensure the qty cell is at least as tall as image (plus padding) */
+	min-height: 60px;
+	/* allow inner flex to center content */
+	padding: 12px 8px;
+}
+
+/* inner qty wrapper */
 .cart-qty {
 	display: flex;
-	align-items: center;
-	gap: 8px;
+	align-items: center;        /* vertical center of the buttons + number */
+	justify-content: center;    /* horizontal center */
+	gap: 12px;
+	width: 100%;
+	box-sizing: border-box;
 }
+
+/* buttons */
 .cart-qty-btn {
 	background: #e0e0e0;
 	border: none;
 	border-radius: 50%;
-	width: 28px;
-	height: 28px;
-	font-size: 1.2rem;
+	width: 32px;
+	height: 32px;
+	font-size: 1.1rem;
 	cursor: pointer;
-	transition: background 0.2s, transform 0.1s;
+	transition: background 0.2s, transform 0.08s;
+	/* make button render as perfect square and center icon/text */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	line-height: 1;
 }
 .cart-qty-btn:hover {
 	background: #bdbdbd;
 }
+
+/* number between buttons */
+.cart-qty-value {
+	min-width: 28px;
+	text-align: center;
+	font-weight: 700;
+	display: inline-block;
+	line-height: 1;
+}
+
+/* remove odd borders from last cell (trash) if needed */
 .cart-remove {
 	color: #e53935;
 	background: none;
@@ -65,10 +107,13 @@
 	font-size: 1.2rem;
 	cursor: pointer;
 	transition: transform 0.1s;
+	padding: 0;
 }
 .cart-remove:active {
 	transform: scale(0.92);
 }
+
+/* summary & others */
 .cart-summary {
 	margin-top: 32px;
 	text-align: right;
