@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Lê Phú Quới</title>
+    <link rel="stylesheet" href="../css/Registration.css">
+    <script src="../js/Registration.js" defer></script>
+</head>
+<body>
+    <div class="registration-container">
+        <h2 class="registration-title">Registration</h2>
+        <form class="registration-form" autocomplete="off">
+            <div class="form-group">
+                <input type="text" id="reg-username" name="username" placeholder="Tên đăng nhập" required>
+                <div class="input-message" id="username-msg"></div>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-password" name="password" placeholder="Mật khẩu" required>
+                <!-- <span class="toggle-password" id="togglePassword">&#128065;</span> -->
+                <div class="password-strength" id="password-strength"></div>
+                <div class="input-message" id="password-msg"></div>
+            </div>
+            <div class="form-group">
+                <input type="password" id="reg-confirm" name="confirm" placeholder="Nhập lại mật khẩu" required>
+                <!-- <span class="toggle-password" id="toggleConfirm">&#128065;</span> -->
+                <div class="input-message" id="confirm-msg"></div>
+            </div>
+            <button type="submit" id="register-btn" class="btn-register" disabled>Đăng ký</button>
+        </form>
+        <div id="toast" class="toast"></div>
+    </div>
+</body>
+</html>
