@@ -25,13 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Đăng nhập thành công!');
         });
     }
-
-    // Xử lý "Quên mật khẩu?"
-    const forgot = document.querySelector('.forgot-password');
-    if (forgot) {
-        forgot.addEventListener('click', function (e) {
-            e.preventDefault();
-            alert('Vui lòng liên hệ quản trị viên để lấy lại mật khẩu.');
-        });
-    }
 });

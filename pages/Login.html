@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Lê Phú Quới</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/Login.css">
     <script src="../js/Login.js" defer></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/Logo.png">
+	<link rel="apple-touch-icon" href="../assets/Logo.png">
 </head>
 <body>
     <div class="login-container">
@@ -16,7 +18,7 @@
                 <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
                 <!-- <span class="toggle-password" id="togglePassword">&#128065;</span> -->
             </div>
-            <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            <a href="../pages/ForgotPassword.html" class="forgot-password">Quên mật khẩu?</a>
             <div class="login-actions">
                 <button type="button" class="btn-register">Đăng ký</button>
                 <button type="submit" class="btn-login">Đăng nhập</button>
@@ -63,15 +65,6 @@
                     } else {
                         alert('Tên đăng nhập hoặc mật khẩu không đúng!');
                     }
-                });
-            }
-
-            // Xử lý "Quên mật khẩu?"
-            const forgot = document.querySelector('.forgot-password');
-            if (forgot) {
-                forgot.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    alert('Vui lòng liên hệ quản trị viên để lấy lại mật khẩu.');
                 });
             }
         });
