@@ -84,6 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
         cartCount.style.transform = 'scale(1)';
       }, 300);
     }
+    // Hiệu ứng nhấn nút khi thêm giỏ hàng
+  var btns = document.querySelectorAll("button[onclick*='addToCart']");
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      btn.style.transform = "scale(0.9)";
+      btn.style.backgroundColor = "#2e7d32"; // xanh đậm hơn khi click
+      btn.style.transition = "transform 0.15s, background-color 0.15s";
+      setTimeout(function () {
+        btn.style.transform = "scale(1)";
+        btn.style.backgroundColor = "";
+      }, 200);
+    });
+  });
+
     // Toast thông báo
     var toast = document.createElement('div');
     toast.innerText = 'Đã thêm ' + product + ' vào giỏ hàng!';
@@ -114,3 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
     cartCount.innerText = Object.values(cart).reduce((a,b) => a+b, 0);
   }
 });
+

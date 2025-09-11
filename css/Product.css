@@ -111,15 +111,21 @@ nav a:hover, nav a.active {
 
 /* --- HEADER --- */
 header {
-  padding-top: 56px;
+  background: linear-gradient(90deg,#43a047 60%,#388e3c 100%);
+  color: #fff;
+  padding: 32px 0 18px 0;
   text-align: center;
-  background: #fff;
+  box-shadow: 0 2px 12px rgba(56,142,60,0.08);
 }
 header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+}
+header p {
   margin: 0;
-  font-size: 2rem;
-  color: #388e3c;
-  font-weight: 600;
+  font-size: 1.08rem;
+  opacity: 0.93;
 }
 
 /* --- PRODUCT CATEGORIES --- */
