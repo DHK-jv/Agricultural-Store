@@ -16,7 +16,6 @@
             <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
             <div class="password-group">
                 <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
-                <!-- <span class="toggle-password" id="togglePassword">&#128065;</span> -->
             </div>
             <a href="../pages/ForgotPassword.html" class="forgot-password">Quên mật khẩu?</a>
             <div class="login-actions">
@@ -25,5 +24,49 @@
             </div>
         </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hiển thị/ẩn mật khẩu
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function () {
+                    passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Xử lý nút Đăng ký
+            const registerBtn = document.querySelector('.btn-register');
+            if (registerBtn) {
+                registerBtn.addEventListener('click', function () {
+                    window.location.href = 'Registration.html';
+                });
+            }
+
+            // Xử lý đăng nhập
+            const form = document.querySelector('.login-form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const username = form.username.value.trim();
+                    const password = form.password.value.trim();
+                    if (!username || !password) {
+                        alert('Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!');
+                        return;
+                    }
+                    // Giả lập kiểm tra đăng nhập với CSDL
+                    // Thay bằng AJAX thực tế nếu có server
+                    // Ví dụ: đăng nhập thành công nếu username là "user" và password là "123456Aa@"
+                    if (username === 'user' && password === '123456Aa@') {
+                        alert('Đăng nhập thành công!');
+                        window.location.href = '../Home.html';
+                    } else {
+                        alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
