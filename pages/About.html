@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Giới thiệu</title>
 	<link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/About.css">
+    <script src="../js/About.js" defer></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="icon" type="image/png" sizes="32x32" href="../assets/Logo.png">
 	<link rel="apple-touch-icon" href="../assets/Logo.png">
@@ -90,16 +92,5 @@
                 </div>
             </div>
         </footer>
-	<script>
-	function getCart() {
-		return JSON.parse(localStorage.getItem('cart') || '{}');
-	}
-	function updateCartCount() {
-		var cart = getCart();
-		var count = Object.values(cart).reduce((a,b) => a+b, 0);
-		document.getElementById('cart-count').innerText = count;
-	}
-	updateCartCount();
-	</script>
 </body>
 </html>

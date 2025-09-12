@@ -30,6 +30,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Hàm theo dõi đơn hàng
+  function trackOrder() {
+    var orderId = document.getElementById('order-id').value.trim();
+    var result = document.getElementById('tracking-result');
+    if (!orderId) {
+      result.innerHTML = '<span style="color:#e53935;">Vui lòng nhập mã đơn hàng!</span>';
+      return;
+    }
+    // Demo trạng thái đơn hàng
+    var statusList = [
+      {step: 'Đã tiếp nhận', time: '09:00 05/09/2025'},
+      {step: 'Đang xử lý', time: '10:00 05/09/2025'},
+      {step: 'Đang giao hàng', time: '14:00 05/09/2025'},
+      {step: 'Đã giao', time: '16:30 05/09/2025'}
+    ];
+    var html = '<div class="tracking-status"><h3>Trạng thái đơn hàng: ' + orderId + '</h3>';
+    html += '<ul>';
+    statusList.forEach(function(s) {
+      html += '<li><span class="step">' + s.step + '</span> <span class="time">' + s.time + '</span></li>';
+    });
+    html += '</ul></div>';
+    result.innerHTML = html;
+  }
+
+  // Bắt sự kiện submit form theo dõi
+  var trackingForm = document.querySelector('.tracking-form');
+  if (trackingForm) {
+    trackingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      trackOrder();
+    });
+  }
+
   // Toast thông báo
   function showPaymentToast(msg) {
     var toast = document.createElement('div');
@@ -52,6 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       toast.style.opacity = '0';
       setTimeout(function() { toast.remove(); }, 400);
-    }, 1800);git 
+    }, 1800); 
   }
 });

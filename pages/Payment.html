@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh toán & Giám sát đơn hàng</title>
     <link rel="stylesheet" href="../css/Payment.css">
+    <link rel="stylesheet" href="../css/Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="../js/Payment.js"></script>
+    <script src="../js/Payment.js" defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/Logo.png">
 	<link rel="apple-touch-icon" href="../assets/Logo.png">
 </head>
@@ -105,29 +106,5 @@
                 </div>
             </div>
         </footer>
-    <script>
-    function trackOrder() {
-        var orderId = document.getElementById('order-id').value.trim();
-        var result = document.getElementById('tracking-result');
-        if (!orderId) {
-            result.innerHTML = '<span style="color:#e53935;">Vui lòng nhập mã đơn hàng!</span>';
-            return;
-        }
-        // Demo trạng thái đơn hàng
-        var statusList = [
-            {step: 'Đã tiếp nhận', time: '09:00 05/09/2025'},
-            {step: 'Đang xử lý', time: '10:00 05/09/2025'},
-            {step: 'Đang giao hàng', time: '14:00 05/09/2025'},
-            {step: 'Đã giao', time: '16:30 05/09/2025'}
-        ];
-        var html = '<div class="tracking-status"><h3>Trạng thái đơn hàng: '+orderId+'</h3>';
-        html += '<ul>';
-        statusList.forEach(function(s, i) {
-            html += '<li><span class="step">'+s.step+'</span> <span class="time">'+s.time+'</span></li>';
-        });
-        html += '</ul></div>';
-        result.innerHTML = html;
-    }
-    </script>
 </body>
 </html>
