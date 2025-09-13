@@ -36,3 +36,28 @@ function updateCartCount() {
 
 // Load giỏ hàng khi trang mở
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
+function changeMainImage(src) {
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail-images img');
+    
+    // Change main image
+    mainImage.src = src;
+    
+    // Update active thumbnail
+    thumbnails.forEach(thumb => {
+        if (thumb.src === src) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+}
+
+// Set first thumbnail as active on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const firstThumb = document.querySelector('.thumbnail-images img');
+    if (firstThumb) {
+        firstThumb.classList.add('active');
+    }
+});

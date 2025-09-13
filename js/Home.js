@@ -1,5 +1,29 @@
 // Home.js - Hiệu ứng động hiện đại cho trang chủ
 
+  // Banner lớn chuyển động
+  let currentBannerLarge = 0;
+  function showBannerLarge(idx) {
+      const banners = document.querySelectorAll('.banner-featured');
+      if (!banners.length) return;
+      banners.forEach((b,i)=>b.classList.toggle('active',i===idx));
+  }
+  function prevBannerLarge() {
+      const banners = document.querySelectorAll('.banner-featured');
+      currentBannerLarge = (currentBannerLarge-1+banners.length)%banners.length;
+      showBannerLarge(currentBannerLarge);
+  }
+  function nextBannerLarge() {
+      const banners = document.querySelectorAll('.banner-featured');
+      currentBannerLarge = (currentBannerLarge+1)%banners.length;
+      showBannerLarge(currentBannerLarge);
+  }
+  setInterval(()=>{nextBannerLarge();},4000);
+  document.addEventListener('DOMContentLoaded',()=>{
+      showBannerLarge(currentBannerLarge);
+  });
+  // Cập nhật số lượng khi tải trang
+  updateCartCount();
+
 document.addEventListener('DOMContentLoaded', function() {
   // Hiệu ứng banner chuyển động mượt
   var banners = document.querySelectorAll('.banner-featured');

@@ -24,7 +24,7 @@
             <a href="../Home.html">Trang chủ</a>
             <a href="About.html">Giới thiệu</a>
             <a href="Product.html">Sản phẩm</a>
-            <a href="New.html">Tin tức</a>
+            <a href="Blog.html">Tin tức</a>
             <a href="Contact.html">Liên hệ</a>
         </div>
         <span class="nav-account-cart" style="display:flex;align-items:center;gap:8px;position:absolute;right:10px;top:50%;transform:translateY(-50%);">
@@ -42,7 +42,15 @@
   <main class="product-detail-container" style="display:flex;gap:40px;max-width:1100px;margin:40px auto;padding:20px;">
     <!-- Ảnh sản phẩm -->
     <div class="product-images" style="flex:1;">
-      <img src="../assets/2.png" alt="Phân bón hữu cơ cao cấp" style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <div class="main-image">
+        <img src="../assets/1.jpg" alt="Phân bón hữu cơ cao cấp" id="mainImage">
+      </div>
+      <div class="thumbnail-images">
+        <img src="../assets/1.jpg" alt="Ảnh 1" onclick="changeMainImage(this.src)">
+        <img src="../assets/2.png" alt="Ảnh 2" onclick="changeMainImage(this.src)">
+        <img src="../assets/3.png" alt="Ảnh 3" onclick="changeMainImage(this.src)">
+        <img src="../assets/4.png" alt="Ảnh 4" onclick="changeMainImage(this.src)">
+      </div>
     </div>
 
     <!-- Thông tin sản phẩm -->
