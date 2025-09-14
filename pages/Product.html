@@ -4,35 +4,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sản phẩm</title>
-	<link rel="stylesheet" href="../css/Product.css">
 	<link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../css/responsive-utilities.css">
+	<link rel="stylesheet" href="../css/Product.css">
+	<script src="../js/Home.js" defer></script>
 	<script src="../js/Product.js" defer></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="icon" type="image/png" sizes="32x32" href="../assets/Logo.png">
 	<link rel="apple-touch-icon" href="../assets/Logo.png">
 </head>
 <body>
-	<header>
-		<h1>Sản phẩm</h1>
-	</header>
-	<nav style="display:flex;align-items:center;justify-content:center;position:relative;">
-        <div style="display:flex;gap:8px;justify-content:center;flex:1;">
-            <a href="../Home.html">Trang chủ</a>
-            <a href="About.html">Giới thiệu</a>
-            <a href="Product.html">Sản phẩm</a>
-            <a href="Blog.html">Tin tức</a>
-            <a href="Contact.html">Liên hệ</a>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="../assets/Logo.png" alt="Logo Lê Phú Quới" class="logo-img">
+            </div>
         </div>
-        <span class="nav-account-cart" style="display:flex;align-items:center;gap:8px;position:absolute;right:10px;top:50%;transform:translateY(-50%);">
-            <a href="Login.html" class="nav-account" title="Tài khoản" style="background:none;padding:0;margin:0;box-shadow:none;border:none;">
-                <i class="fa fa-user" style="font-size:18px;color:#388e3c;"></i>
-            </a>
-            <a href="Car.html" class="nav-cart" title="Giỏ hàng" style="background:none;padding:0;margin:0;box-shadow:none;border:none;position:relative;">
-                <i class="fa fa-shopping-cart" style="font-size:18px;color:#388e3c;"></i>
-                <span id="cart-count">0</span>
-            </a>
-        </span>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="../Home.html" class="nav-link">Trang chủ</a>
+                <a href="About.html" class="nav-link">Giới thiệu</a>
+                <a href="Product.html" class="nav-link active">Sản phẩm</a>
+                <a href="Blog.html" class="nav-link">Tin tức</a>
+                <a href="Contact.html" class="nav-link">Liên hệ</a>
+            </div>
+            <div class="nav-actions">
+                <a href="Login.html" class="nav-account" title="Tài khoản">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="Car.html" class="nav-cart" title="Giỏ hàng">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
+    <div class="nav-search-bar">
+        <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
+            <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
 	<div class="container">
 		<h2>Danh mục sản phẩm</h2>
 		<div class="product-categories">

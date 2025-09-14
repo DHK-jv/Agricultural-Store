@@ -153,30 +153,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Giỏ hàng đơn giản dùng localStorage
-function getCartCount() {
-    let cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    let count = 0;
-    for (let key in cart) {
-        count += cart[key];
-    }
-    return count;
-}
-
-function updateCartCount() {
-    const el = document.getElementById('cart-count');
-    if (el) el.textContent = getCartCount();
-}
-
-// Thêm sản phẩm vào giỏ
-function addToCart(productName) {
-    let cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    cart[productName] = (cart[productName] || 0) + 1;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert('Đã thêm vào giỏ: ' + productName);
-}
-
-// Khởi tạo số lượng giỏ khi load trang
-document.addEventListener('DOMContentLoaded', updateCartCount);
-
