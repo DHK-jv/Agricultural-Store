@@ -1,57 +1,78 @@
 // Home.js - Hiệu ứng động hiện đại cho trang chủ
 
-  // Banner lớn chuyển động
-  let currentBannerLarge = 0;
-  function showBannerLarge(idx) {
-      const banners = document.querySelectorAll('.banner-featured');
-      if (!banners.length) return;
-      banners.forEach((b,i)=>b.classList.toggle('active',i===idx));
-  }
-  function prevBannerLarge() {
-      const banners = document.querySelectorAll('.banner-featured');
-      currentBannerLarge = (currentBannerLarge-1+banners.length)%banners.length;
-      showBannerLarge(currentBannerLarge);
-  }
-  function nextBannerLarge() {
-      const banners = document.querySelectorAll('.banner-featured');
-      currentBannerLarge = (currentBannerLarge+1)%banners.length;
-      showBannerLarge(currentBannerLarge);
-  }
-  setInterval(()=>{nextBannerLarge();},4000);
-  document.addEventListener('DOMContentLoaded',()=>{
-      showBannerLarge(currentBannerLarge);
-  });
-  // Cập nhật số lượng khi tải trang
-  updateCartCount();
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Hiệu ứng banner chuyển động mượt
-  var banners = document.querySelectorAll('.banner-featured');
-  var currentBanner = 0;
-  function showBanner(idx) {
-    banners.forEach(function(b, i) {
-      b.classList.toggle('active', i === idx);
-      b.style.opacity = i === idx ? '1' : '0.3';
-      b.style.transform = i === idx ? 'scale(1.04)' : 'scale(0.98)';
-      b.style.transition = 'opacity 0.7s, transform 0.7s';
+// Video Banner Setup
+function setupVideoBanner() {
+  const video = document.querySelector('.banner-video');
+  if (video) {
+    // Intersection Observer để pause video khi không visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(video);
+    
+    // Lazy loading cho video
+    video.addEventListener('loadstart', () => {
+      video.style.opacity = '0.7';
+    });
+    
+    video.addEventListener('canplay', () => {
+      video.style.opacity = '1';
     });
   }
-  function nextBanner() {
-    currentBanner = (currentBanner + 1) % banners.length;
-    showBanner(currentBanner);
+}
+
+// Mobile Menu Toggle
+function setupMobileMenu() {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const navLinkItems = navLinks.querySelectorAll('.nav-link');
+    navLinkItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      }
+    });
+    
+    // Close menu on window resize if screen becomes larger
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      }
+    });
   }
-  function prevBanner() {
-    currentBanner = (currentBanner - 1 + banners.length) % banners.length;
-    showBanner(currentBanner);
-  }
-  var leftBtn = document.querySelector('.banner-btn.left');
-  var rightBtn = document.querySelector('.banner-btn.right');
-  if (leftBtn && rightBtn) {
-    leftBtn.onclick = prevBanner;
-    rightBtn.onclick = nextBanner;
-  }
-  setInterval(nextBanner, 4000);
-  showBanner(currentBanner);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Setup video banner
+  setupVideoBanner();
+  
+  // Setup mobile menu
+  setupMobileMenu();
 
   // Hiệu ứng hover cho sản phẩm tiêu biểu
   var cards = document.querySelectorAll('.featured-card');

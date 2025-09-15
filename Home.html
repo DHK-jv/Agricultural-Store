@@ -4,37 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lê Phú Quới - Vật Liệu Nông Nghiệp</title>
-    <link rel="stylesheet" href="../css/Home.css">
-    <script src="../js/Home.js"></script>
+    <link rel="stylesheet" href="css/Home.css">
+    <link rel="stylesheet" href="css/responsive-utilities.css">
+    <script src="js/Home.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/Logo.png">
 	<link rel="apple-touch-icon" href="assets/Logo.png">
 </head>
 <body>
-    <header>
-        <div style="display:flex;align-items:center;gap:18px;justify-content:center;position:relative;">
-            <img src="assets/Logo.png" alt="Logo Lê Phú Quới" style="height:140px;position:absolute;left:20px;">
-            <h1 style="margin:0;">Công Ty Vật Liệu Nông Nghiệp Lê Phú Quới</h1>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="assets/Logo.png" alt="Logo Lê Phú Quới" class="logo-img">
+            </div>
         </div>
-        <p>Chuyên cung cấp vật tư, vật liệu nông nghiệp chất lượng, giá tốt tại Việt Nam</p>
     </header>
-    <nav style="display:flex;align-items:center;justify-content:center;position:relative;">
-        <div style="display:flex;gap:8px;justify-content:center;flex:1;">
-            <a href="Home.html">Trang chủ</a>
-            <a href="pages/About.html">Giới thiệu</a>
-            <a href="pages/Product.html">Sản phẩm</a>
-            <a href="pages/Blog.html">Tin tức</a>
-            <a href="pages/Contact.html">Liên hệ</a>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="Home.html" class="nav-link active">Trang chủ</a>
+                <a href="pages/About.html" class="nav-link">Giới thiệu</a>
+                <a href="pages/Product.html" class="nav-link">Sản phẩm</a>
+                <a href="pages/Blog.html" class="nav-link">Tin tức</a>
+                <a href="pages/Contact.html" class="nav-link">Liên hệ</a>
+            </div>
+            <div class="nav-actions">
+                <a href="pages/Login.html" class="nav-account" title="Tài khoản">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="pages/Car.html" class="nav-cart" title="Giỏ hàng">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <span class="nav-account-cart" style="display:flex;align-items:center;gap:8px;position:absolute;right:10px;top:50%;transform:translateY(-50%);">
-            <a href="pages/Login.html" class="nav-account" title="Tài khoản" style="background:none;padding:0;margin:0;box-shadow:none;border:none;">
-                <i class="fa fa-user" style="font-size:18px;color:#388e3c;"></i>
-            </a>
-            <a href="pages/Car.html" class="nav-cart" title="Giỏ hàng" style="background:none;padding:0;margin:0;box-shadow:none;border:none;position:relative;">
-                <i class="fa fa-shopping-cart" style="font-size:18px;color:#388e3c;"></i>
-                <span id="cart-count">0</span>
-            </a>
-        </span>
     </nav>
 <div class="nav-search-bar">
     <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
@@ -43,165 +51,80 @@
     </form>
 </div>
     </nav>
-    <div class="banner-large" id="banner-large">
-        <div class="banner-featured active">
-            <div style="position:relative;display:inline-block;">
-                <img src="assets/2.png" alt="Phân bón hữu cơ cao cấp">
-                <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-            </div>
-            <div class="banner-featured-info">
-                <h2>Phân bón hữu cơ cao cấp</h2>
-                <p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
-                <div class="price" style="color:#e53935;font-weight:bold;">200.000đ</div>
-                <button onclick="addToCart('Phân bón hữu cơ cao cấp')">Thêm vào giỏ hàng</button>
-            </div>
-        </div>
-        <div class="banner-featured">
-            <div style="position:relative;display:inline-block;">
-                <img src="assets/3.png" alt="Phân NPK tổng hợp">
-                <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-            </div>
-            <div class="banner-featured-info">
-                <h2>Phân NPK tổng hợp</h2>
-                <p>Bổ sung đầy đủ dưỡng chất cho cây phát triển toàn diện.</p>
-                <div class="price" style="color:#e53935;font-weight:bold;">100.000đ</div>
-                <button onclick="addToCart('Phân NPK tổng hợp')">Thêm vào giỏ hàng</button>
+    <div class="video-banner">
+        <video autoplay muted loop playsinline class="banner-video">
+            <source src="assets/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <div class="video-content">
+                <h1 class="video-title">Lê Phú Quới</h1>
+                <p class="video-subtitle">Chuyên cung cấp vật tư, vật liệu nông nghiệp chất lượng cao</p>
+                <div class="video-buttons">
+                    <a href="pages/Product.html" class="btn btn-primary">Xem sản phẩm</a>
+                    <a href="pages/About.html" class="btn btn-secondary">Tìm hiểu thêm</a>
+                </div>
             </div>
         </div>
-        <div class="banner-featured">
-            <div style="position:relative;display:inline-block;">
-                <img src="assets/2.png" alt="Phân bón xuất khẩu">
-                <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-            </div>
-            <div class="banner-featured-info">
-                <h2>Phân bón xuất khẩu</h2>
-                <p>Chất lượng quốc tế, phù hợp cho cây trồng xuất khẩu.</p>
-                <div class="price" style="color:#e53935;font-weight:bold;">180.000đ</div>
-                <button onclick="addToCart('Phân bón xuất khẩu')">Thêm vào giỏ hàng</button>
-            </div>
-        </div>
-    <button class="banner-btn left" onclick="prevBannerLarge()" style="background:none;border:none;box-shadow:none;padding:0 10px;font-size:22px;color:#388e3c;top:50%;transform:translateY(-50%);left:10px;position:absolute;">&#10094;</button>
-    <button class="banner-btn right" onclick="nextBannerLarge()" style="background:none;border:none;box-shadow:none;padding:0 10px;font-size:22px;color:#388e3c;top:50%;transform:translateY(-50%);right:10px;position:absolute;">&#10095;</button>
     </div>
     <div class="container">
         <section class="featured-section">
-            <h2 style="text-align:center;color:#388e3c;margin-bottom:24px;">Sản phẩm tiêu biểu</h2>
-            <div class="featured-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;justify-items:center;">
+            <h2 style="text-align:center;color:#388e3c;margin-bottom:24px;">Sản phẩm nổi bật</h2>
+            <div class="featured-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;justify-items:center;max-width:900px;margin:0 auto;">
                 <div class="featured-card">
                     <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Phân bón hữu cơ 2">
+                        <img src="assets/1.jpg" alt="Phân bón hữu cơ cao cấp">
                         <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
-                        <h3>Phân bón hữu cơ 2</h3>
-                        <p>Thân thiện môi trường, tăng sức đề kháng cho cây trồng.</p>
-                        <div class="price">120.000đ</div>
-                        <button onclick="addToCart('Phân bón hữu cơ 2')">Thêm vào giỏ hàng</button>
+                        <h3>Phân bón hữu cơ cao cấp</h3>
+                        <p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
+                        <div class="price">200.000đ</div>
+                        <button onclick="addToCart('Phân bón hữu cơ cao cấp')">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="featured-card">
                     <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Phân NPK chuyên dụng">
+                        <img src="assets/1.jpg" alt="Phân NPK tổng hợp">
                         <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
-                        <h3>Phân NPK chuyên dụng</h3>
-                        <p>Phù hợp cho nhiều loại cây trồng, giúp cây phát triển khỏe mạnh.</p>
+                        <h3>Phân NPK tổng hợp</h3>
+                        <p>Bổ sung đầy đủ dưỡng chất cho cây phát triển toàn diện.</p>
                         <div class="price">150.000đ</div>
-                        <button onclick="addToCart('Phân NPK chuyên dụng')">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart('Phân NPK tổng hợp')">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="featured-card">
                     <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Phân bón hữu cơ 3">
+                        <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
                         <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
-                        <h3>Phân bón hữu cơ 3</h3>
-                        <p>Giúp cây phát triển bền vững, tăng năng suất lâu dài.</p>
-                        <div class="price">135.000đ</div>
-                        <button onclick="addToCart('Phân bón hữu cơ 3')">Thêm vào giỏ hàng</button>
+                        <h3>Hạt giống chất lượng cao</h3>
+                        <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+                        <div class="price">35.000đ</div>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
+                <div class="featured-card">
+                    <div style="position:relative;display:inline-block;">
+                        <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
+                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Hạt giống chất lượng cao</h3>
+                        <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+                        <div class="price">35.000đ</div>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:32px;">
+                <a href="pages/Product.html" class="btn btn-primary" style="display:inline-block;background:linear-gradient(90deg,#43a047 60%,#388e3c 100%);color:#fff;text-decoration:none;padding:12px 32px;border-radius:8px;font-weight:bold;transition:transform 0.2s;">Xem tất cả sản phẩm</a>
             </div>
         </section>
 
-        <section id="sanpham">
-            <h2>Sản phẩm tiêu biểu</h2>
-            <div class="products modern-products" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;justify-items:center;">
-                <div class="product modern-product">
-                    <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Phân bón">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-                    </div>
-                    <h3>Phân bón</h3>
-                    <p>Phân bón hữu cơ, vô cơ giúp cây trồng phát triển khỏe mạnh.</p>
-                    <div class="price">120.000đ</div>
-                    <button onclick="addToCart('Phân bón')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Hạt giống">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-                    </div>
-                    <h3>Hạt giống</h3>
-                    <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
-                    <div class="price">35.000đ</div>
-                    <button onclick="addToCart('Hạt giống')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Màng phủ nông nghiệp">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-                    </div>
-                    <h3>Màng phủ nông nghiệp</h3>
-                    <p>Màng phủ giúp giữ ẩm, hạn chế cỏ dại, tăng năng suất cây trồng.</p>
-                    <div class="price">90.000đ</div>
-                    <button onclick="addToCart('Màng phủ nông nghiệp')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Lưới che nắng">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-                    </div>
-                    <h3>Lưới che nắng</h3>
-                    <p>Lưới che nắng, lưới chắn côn trùng bảo vệ cây trồng hiệu quả.</p>
-                    <div class="price">70.000đ</div>
-                    <button onclick="addToCart('Lưới che nắng')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <div style="position:relative;display:inline-block;">
-                        <img src="assets/1.jpg" alt="Dụng cụ làm vườn">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
-                    </div>
-                    <h3>Dụng cụ làm vườn</h3>
-                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
-                    <div class="price">50.000đ</div>
-                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <img src="assets/1.jpg" alt="Dụng cụ làm vườn">
-                    <h3>Dụng cụ làm vườn</h3>
-                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
-                    <div class="price">95.000đ</div>
-                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <img src="assets/1.jpg" alt="Dụng cụ làm vườn">
-                    <h3>Dụng cụ làm vườn</h3>
-                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
-                    <div class="price">95.000đ</div>
-                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
-                </div>
-                <div class="product modern-product">
-                    <img src="assets/1.jpg" alt="Dụng cụ làm vườn">
-                    <h3>Dụng cụ làm vườn</h3>
-                    <p>Các loại dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
-                    <div class="price">95.000đ</div>
-                    <button onclick="addToCart('Dụng cụ làm vườn')">Thêm vào giỏ</button>
-                </div>
-            </div>
-        </section>
     </div>
     <footer class="main-footer">
         <div class="footer-top">
