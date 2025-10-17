@@ -49,16 +49,16 @@
     <div class="nav-search-bar">
         <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
             <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit" title="Tìm kiếm" aria-label="Tìm kiếm sản phẩm"><i class="fa fa-search"></i></button>
         </form>
     </div>
 	<div class="container">
 		<h2>Danh mục sản phẩm</h2>
 		<div class="product-categories">
-			<button class="cat-btn active" onclick="filterCategory('all')">Tất cả</button>
-			<button class="cat-btn" onclick="filterCategory('xuatkhau')">Phân bón xuất khẩu</button>
-			<button class="cat-btn" onclick="filterCategory('huuco')">Phân bón hữu cơ</button>
-			<button class="cat-btn" onclick="filterCategory('npk')">Phân NPK</button>
+			<button class="cat-btn active" onclick="filterCategory('all')" aria-label="Hiển thị tất cả sản phẩm">Tất cả</button>
+			<button class="cat-btn" onclick="filterCategory('xuatkhau')" aria-label="Lọc sản phẩm phân bón xuất khẩu">Phân bón xuất khẩu</button>
+			<button class="cat-btn" onclick="filterCategory('huuco')" aria-label="Lọc sản phẩm phân bón hữu cơ">Phân bón hữu cơ</button>
+			<button class="cat-btn" onclick="filterCategory('npk')" aria-label="Lọc sản phẩm phân NPK">Phân NPK</button>
 		</div>
 		<div class="products modern-products" id="product-list">
 			<!-- 18 sản phẩm mẫu, đủ các loại -->
@@ -67,70 +67,70 @@
 				<h3>Phân bón xuất khẩu 1</h3>
 				<p>Phân bón cao cấp dành cho thị trường xuất khẩu.</p>
 				<div class="price">180.000đ</div>
-				<button onclick="addToCart('Phân bón xuất khẩu 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón xuất khẩu 1')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón xuất khẩu 1 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="xuatkhau">
 				<img src="../assets/1.jpg" alt="Phân bón xuất khẩu 2">
 				<h3>Phân bón xuất khẩu 2</h3>
 				<p>Phân bón xuất khẩu tăng năng suất cây trồng.</p>
 				<div class="price">175.000đ</div>
-				<button onclick="addToCart('Phân bón xuất khẩu 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón xuất khẩu 2')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón xuất khẩu 2 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="xuatkhau">
 				<img src="../assets/1.jpg" alt="Phân bón xuất khẩu 3">
 				<h3>Phân bón xuất khẩu 3</h3>
 				<p>Chất lượng quốc tế, phù hợp cây trồng xuất khẩu.</p>
 				<div class="price">190.000đ</div>
-				<button onclick="addToCart('Phân bón xuất khẩu 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón xuất khẩu 3')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón xuất khẩu 3 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="../assets/1.jpg" alt="Phân bón hữu cơ 1">
 				<h3>Phân bón hữu cơ 1</h3>
 				<p>Phân bón hữu cơ an toàn, thân thiện môi trường.</p>
 				<div class="price">120.000đ</div>
-				<button onclick="addToCart('Phân bón hữu cơ 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón hữu cơ 1')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ 1 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="../assets/1.jpg" alt="Phân bón hữu cơ 2">
 				<h3>Phân bón hữu cơ 2</h3>
 				<p>Giúp cải tạo đất, tăng sức đề kháng cho cây.</p>
 				<div class="price">125.000đ</div>
-				<button onclick="addToCart('Phân bón hữu cơ 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón hữu cơ 2')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ 2 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="../assets/1.jpg" alt="Phân bón hữu cơ 3">
 				<h3>Phân bón hữu cơ 3</h3>
 				<p>Thân thiện môi trường, tăng năng suất lâu dài.</p>
 				<div class="price">130.000đ</div>
-				<button onclick="addToCart('Phân bón hữu cơ 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón hữu cơ 3')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ 3 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="huuco">
 				<img src="../assets/1.jpg" alt="Phân bón hữu cơ 4">
 				<h3>Phân bón hữu cơ 4</h3>
 				<p>Giúp cây phát triển bền vững, tăng năng suất.</p>
 				<div class="price">128.000đ</div>
-				<button onclick="addToCart('Phân bón hữu cơ 4')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón hữu cơ 4')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ 4 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="npk">
 				<img src="../assets/3.png" alt="Phân NPK 1">
 				<h3>Phân NPK 1</h3>
 				<p>Phân NPK tổng hợp, cung cấp đầy đủ dinh dưỡng.</p>
 				<div class="price">95.000đ</div>
-				<button onclick="addToCart('Phân NPK 1')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân NPK 1')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân NPK 1 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="npk">
 				<img src="../assets/4.png" alt="Phân NPK 2">
 				<h3>Phân NPK 2</h3>
 				<p>Chuyên dùng cho rau màu, cây ăn trái.</p>
 				<div class="price">98.000đ</div>
-				<button onclick="addToCart('Phân NPK 2')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân NPK 2')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân NPK 2 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="npk">
 				<img src="../assets/5.png" alt="Phân NPK 3">
 				<h3>Phân NPK 3</h3>
 				<p>Bổ sung dưỡng chất cho cây phát triển toàn diện.</p>
 				<div class="price">100.000đ</div>
-				<button onclick="addToCart('Phân NPK 3')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân NPK 3')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân NPK 3 vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<!-- Sản phẩm khác -->
 			<div class="product modern-product" data-cat="other">
@@ -138,70 +138,70 @@
 				<h3>Màng phủ nông nghiệp</h3>
 				<p>Giữ ẩm, hạn chế cỏ dại, tăng năng suất cây trồng.</p>
 				<div class="price">80.000đ</div>
-				<button onclick="addToCart('Màng phủ nông nghiệp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Màng phủ nông nghiệp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm màng phủ nông nghiệp vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Lưới che nắng">
 				<h3>Lưới che nắng</h3>
 				<p>Lưới che nắng, chắn côn trùng bảo vệ cây trồng.</p>
 				<div class="price">60.000đ</div>
-				<button onclick="addToCart('Lưới che nắng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Lưới che nắng')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm lưới che nắng vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Dụng cụ làm vườn">
 				<h3>Dụng cụ làm vườn</h3>
 				<p>Dụng cụ làm vườn tiện ích, bền bỉ, dễ sử dụng.</p>
 				<div class="price">95.000đ</div>
-				<button onclick="addToCart('Dụng cụ làm vườn')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Dụng cụ làm vườn')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm dụng cụ làm vườn vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/1.jpg" alt="Phân bón hữu cơ cao cấp">
 				<h3>Phân bón hữu cơ cao cấp</h3>
 				<p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
 				<div class="price">200.000đ</div>
-				<button onclick="addToCart('Phân bón hữu cơ cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Phân bón hữu cơ cao cấp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ cao cấp vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Hạt giống cao cấp">
 				<h3>Hạt giống cao cấp</h3>
 				<p>Hạt giống chất lượng cao, tỉ lệ nảy mầm tốt.</p>
 				<div class="price">45.000đ</div>
-				<button onclick="addToCart('Hạt giống cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Hạt giống cao cấp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm hạt giống cao cấp vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Màng phủ cao cấp">
 				<h3>Màng phủ cao cấp</h3>
 				<p>Màng phủ giữ ẩm, tăng năng suất cây trồng.</p>
 				<div class="price">110.000đ</div>
-				<button onclick="addToCart('Màng phủ cao cấp')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Màng phủ cao cấp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm màng phủ cao cấp vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Dụng cụ làm vườn đa năng">
 				<h3>Dụng cụ làm vườn đa năng</h3>
 				<p>Dụng cụ đa năng, tiện lợi cho mọi nhà vườn.</p>
 				<div class="price">120.000đ</div>
-				<button onclick="addToCart('Dụng cụ làm vườn đa năng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Dụng cụ làm vườn đa năng')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm dụng cụ làm vườn đa năng vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Dụng cụ làm vườn đa năng">
 				<h3>Dụng cụ làm vườn đa năng</h3>
 				<p>Dụng cụ đa năng, tiện lợi cho mọi nhà vườn.</p>
 				<div class="price">120.000đ</div>
-				<button onclick="addToCart('Dụng cụ làm vườn đa năng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Dụng cụ làm vườn đa năng')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm dụng cụ làm vườn đa năng vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Dụng cụ làm vườn đa năng">
 				<h3>Dụng cụ làm vườn đa năng</h3>
 				<p>Dụng cụ đa năng, tiện lợi cho mọi nhà vườn.</p>
 				<div class="price">120.000đ</div>
-				<button onclick="addToCart('Dụng cụ làm vườn đa năng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Dụng cụ làm vườn đa năng')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm dụng cụ làm vườn đa năng vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 			<div class="product modern-product" data-cat="other">
 				<img src="../assets/2.png" alt="Dụng cụ làm vườn đa năng">
 				<h3>Dụng cụ làm vườn đa năng</h3>
 				<p>Dụng cụ đa năng, tiện lợi cho mọi nhà vườn.</p>
 				<div class="price">120.000đ</div>
-				<button onclick="addToCart('Dụng cụ làm vườn đa năng')"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+				<button onclick="addToCart('Dụng cụ làm vườn đa năng')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm dụng cụ làm vườn đa năng vào giỏ hàng"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
 			</div>
 		</div>
 	</div>
@@ -227,7 +227,7 @@
                     <p>Đăng ký nhận tin khuyến mãi và kiến thức nông nghiệp mới nhất!</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đã đăng ký email!');">
                         <input type="email" placeholder="Nhập email của bạn" required>
-                        <button type="submit">Send</button>
+                        <button type="submit" title="Gửi email đăng ký" aria-label="Gửi email đăng ký newsletter">Send</button>
                     </form>
                 </div>
             </div>

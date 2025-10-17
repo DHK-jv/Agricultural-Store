@@ -24,13 +24,14 @@
 	border-bottom: 1px solid #e0e0e0;
 }
 .cart-list th, .cart-list td {
-	padding: 12px 8px;
-	/* remove individual td borders (we use tr border) */
 	border-bottom: none;
-	text-align: left;
+	text-align: center;
 	vertical-align: middle;
 	box-sizing: border-box;
 }
+
+.cart-list th:nth-child(2) { text-align: left; }
+.cart-list td:nth-child(2) { text-align: left; }
 
 /* headings */
 .cart-list th {
@@ -128,6 +129,10 @@
 	font-size: 1.1rem;
 	margin: 40px 0;
 }
+.cart-checkout-container {
+	text-align: right;
+}
+
 .cart-checkout-btn {
 	background: #388e3c;
 	color: #fff;

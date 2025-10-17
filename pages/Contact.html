@@ -48,7 +48,9 @@
     <div class="nav-search-bar">
         <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
             <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit" title="Tìm kiếm" aria-label="Tìm kiếm sản phẩm">
+                <i class="fa fa-search"></i>
+            </button>
         </form>
     </div>
     <div class="container">

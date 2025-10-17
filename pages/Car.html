@@ -49,15 +49,17 @@
     <div class="nav-search-bar">
         <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
             <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit" title="Tìm kiếm" aria-label="Tìm kiếm sản phẩm">
+                <i class="fa fa-search"></i>
+            </button>
         </form>
     </div>
     <div class="cart-container">
         <div class="cart-title">Giỏ hàng của bạn</div>
         <div id="cart-list"></div>
         <div class="cart-summary" id="cart-summary"></div>
-        <div style="text-align:right">
-            <button class="cart-checkout-btn" onclick="checkout()">Thanh toán</button>
+        <div class="cart-checkout-container">
+            <button class="cart-checkout-btn" onclick="checkout()" title="Thanh toán đơn hàng" aria-label="Tiến hành thanh toán đơn hàng">Thanh toán</button>
         </div>
     </div>
     <div id="toast" class="toast"></div>
@@ -83,7 +85,7 @@
                     <p>Đăng ký nhận tin khuyến mãi và kiến thức nông nghiệp mới nhất!</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đã đăng ký email!');">
                         <input type="email" placeholder="Nhập email của bạn" required>
-                        <button type="submit">Send</button>
+                        <button type="submit" title="Gửi email đăng ký" aria-label="Gửi email đăng ký newsletter">Send</button>
                     </form>
                 </div>
             </div>
@@ -128,8 +130,9 @@
     'Phân NPK 2': '../assets/4.png',
     'Phân NPK 3': '../assets/5.png',
     'Dụng cụ làm vườn đa năng': '../assets/1.jpg',
-    'Hạt giống cao cấp': 'img/1.jpg',
-    'Màng phủ cao cấp': 'img/1.jpg'
+    'Hạt giống cao cấp': '../assets/2.png',
+    'Hạt giống chất lượng cao': '../assets/1.jpg',
+    'Màng phủ cao cấp': '../assets/2.png'
     };
     const productPrices = {
     'Dụng cụ làm vườn đa năng': 120000,
@@ -154,7 +157,9 @@
     'Phân NPK 2': 98000,
     'Phân NPK 3': 100000,
     'Phân NPK chuyên dụng': 150000,
-    'Dụng cụ làm vườn 95k': 95000
+    'Dụng cụ làm vườn 95k': 95000,
+    'Hạt giống chất lượng cao': 35000,
+    'Màng phủ cao cấp': 110000
     };
     function getCart() {
         return JSON.parse(localStorage.getItem('cart') || '{}');
@@ -206,6 +211,7 @@
         }
         html += '<table class="cart-list">';
         html += '<tr><th></th><th>Sản phẩm</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th><th></th></tr>';
+
         keys.forEach(function(item, idx){
             var price = productPrices[item]||0;
             var qty = cart[item];
@@ -217,12 +223,12 @@
                     '<td>'+item+'</td>'+
                     '<td>'+price.toLocaleString('vi-VN')+' đ</td>'+
                     '<td class="cart-qty">'+
-                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',-1)">-</button>'+
+                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',-1)" title="Giảm số lượng" aria-label="Giảm số lượng '+item+'">-</button>'+
                         '<span class="cart-qty-value">'+qty+'</span>'+
-                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',1)">+</button>'+
+                        '<button class="cart-qty-btn" onclick="changeQty(\''+item+'\',1)" title="Tăng số lượng" aria-label="Tăng số lượng '+item+'">+</button>'+
                     '</td>'+
                     '<td>'+(subtotal).toLocaleString('vi-VN')+' đ</td>'+
-                    '<td><button class="cart-remove" onclick="removeFromCart(\''+item+'\')"><i class="fa fa-trash"></i></button></td>'+
+                    '<td><button class="cart-remove" onclick="removeFromCart(\''+item+'\')" title="Xóa sản phẩm" aria-label="Xóa '+item+' khỏi giỏ hàng"><i class="fa fa-trash"></i></button></td>'+
                 '</tr>';
         });
         html += '</table>';

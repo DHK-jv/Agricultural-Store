@@ -47,7 +47,9 @@
 <div class="nav-search-bar">
     <form class="search-form" onsubmit="event.preventDefault(); alert('Tìm kiếm: ' + this.q.value);">
         <input type="text" name="q" placeholder="Tìm kiếm sản phẩm, tin tức..." autocomplete="off">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" title="Tìm kiếm" aria-label="Tìm kiếm sản phẩm">
+            <i class="fa fa-search"></i>
+        </button>
     </form>
 </div>
     </nav>
@@ -69,59 +71,83 @@
     </div>
     <div class="container">
         <section class="featured-section">
-            <h2 style="text-align:center;color:#388e3c;margin-bottom:24px;">Sản phẩm nổi bật</h2>
-            <div class="featured-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;justify-items:center;max-width:900px;margin:0 auto;">
+            <h2 class="featured-section-title">Sản phẩm nổi bật</h2>
+            <div class="featured-grid">
                 <div class="featured-card">
-                    <div style="position:relative;display:inline-block;">
+                    <div class="product-image-container">
                         <img src="assets/1.jpg" alt="Phân bón hữu cơ cao cấp">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
                         <h3>Phân bón hữu cơ cao cấp</h3>
                         <p>Giúp cải tạo đất, tăng năng suất và chất lượng nông sản.</p>
                         <div class="price">200.000đ</div>
-                        <button onclick="addToCart('Phân bón hữu cơ cao cấp')">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart('Phân bón hữu cơ cao cấp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân bón hữu cơ cao cấp vào giỏ hàng">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="featured-card">
-                    <div style="position:relative;display:inline-block;">
+                    <div class="product-image-container">
                         <img src="assets/1.jpg" alt="Phân NPK tổng hợp">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
                         <h3>Phân NPK tổng hợp</h3>
                         <p>Bổ sung đầy đủ dưỡng chất cho cây phát triển toàn diện.</p>
                         <div class="price">150.000đ</div>
-                        <button onclick="addToCart('Phân NPK tổng hợp')">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart('Phân NPK tổng hợp')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm phân NPK tổng hợp vào giỏ hàng">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="featured-card">
-                    <div style="position:relative;display:inline-block;">
+                    <div class="product-image-container">
                         <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
                         <h3>Hạt giống chất lượng cao</h3>
                         <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
                         <div class="price">35.000đ</div>
-                        <button onclick="addToCart('Hạt giống chất lượng cao')">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm hạt giống chất lượng cao vào giỏ hàng">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 <div class="featured-card">
-                    <div style="position:relative;display:inline-block;">
+                    <div class="product-image-container">
                         <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
-                        <span style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,0.85);border-radius:12px;padding:2px 10px;display:flex;align-items:center;gap:4px;font-weight:bold;color:#e53935;font-size:1.08rem;box-shadow:0 2px 8px rgba(56,142,60,0.10);z-index:5;"><i class="fa fa-fire"></i>Hot</span>
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
                     </div>
                     <div class="featured-info">
                         <h3>Hạt giống chất lượng cao</h3>
                         <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
                         <div class="price">35.000đ</div>
-                        <button onclick="addToCart('Hạt giống chất lượng cao')">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm hạt giống chất lượng cao vào giỏ hàng">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="product-image-container">
+                        <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Hạt giống chất lượng cao</h3>
+                        <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+                        <div class="price">35.000đ</div>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm hạt giống chất lượng cao vào giỏ hàng">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="product-image-container">
+                        <img src="assets/1.jpg" alt="Hạt giống chất lượng cao">
+                        <span class="hot-label"><i class="fa fa-fire"></i>Hot</span>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Hạt giống chất lượng cao</h3>
+                        <p>Hạt giống rau, hoa, cây ăn trái chất lượng cao, tỉ lệ nảy mầm tốt.</p>
+                        <div class="price">35.000đ</div>
+                        <button onclick="addToCart('Hạt giống chất lượng cao')" title="Thêm sản phẩm vào giỏ hàng" aria-label="Thêm hạt giống chất lượng cao vào giỏ hàng">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
             </div>
-            <div style="text-align:center;margin-top:32px;">
-                <a href="pages/Product.html" class="btn btn-primary" style="display:inline-block;background:linear-gradient(90deg,#43a047 60%,#388e3c 100%);color:#fff;text-decoration:none;padding:12px 32px;border-radius:8px;font-weight:bold;transition:transform 0.2s;">Xem tất cả sản phẩm</a>
+            <div class="view-all-products">
+                <a href="pages/Product.html" class="btn btn-primary view-all-btn">Xem tất cả sản phẩm</a>
             </div>
         </section>
 
@@ -148,7 +174,7 @@
                 <p>Đăng ký nhận tin khuyến mãi và kiến thức nông nghiệp mới nhất!</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đã đăng ký email!');">
                     <input type="email" placeholder="Nhập email của bạn" required>
-                    <button type="submit">Send</button>
+                    <button type="submit" title="Gửi email đăng ký" aria-label="Gửi email đăng ký newsletter">Send</button>
                 </form>
             </div>
         </div>

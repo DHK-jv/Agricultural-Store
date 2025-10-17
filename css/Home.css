@@ -411,6 +411,7 @@ body {
   background: rgba(255,255,255,0.2);
   color: white;
   border: 2px solid white;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -512,12 +513,19 @@ body {
   max-width: 1100px;
   position: relative;
 }
+
+.featured-section-title {
+  text-align: center;
+  color: #388e3c;
+  margin-bottom: 24px;
+}
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
   justify-items: center;
-  margin-top: 12px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .featured-card {
   background: #fff;
@@ -532,6 +540,11 @@ body {
   position: relative;
   overflow: hidden;
 }
+.product-image-container {
+  position: relative;
+  display: inline-block;
+}
+
 .featured-card img {
   width: 100%;
   height: 220px;
@@ -539,6 +552,23 @@ body {
   border-radius: 20px 20px 0 0;
   transition: transform 0.25s;
   box-shadow: 0 2px 12px rgba(56,142,60,0.08);
+}
+
+.hot-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  color: #e53935;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.10);
+  z-index: 5;
 }
 .featured-card:hover img {
   transform: scale(1.07);
@@ -585,6 +615,22 @@ body {
 .featured-info button:hover {
   background: linear-gradient(90deg,#388e3c 60%,#43a047 100%);
   transform: scale(1.06);
+}
+
+.view-all-products {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  background: linear-gradient(90deg,#43a047 60%,#388e3c 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s;
 }
 
 .products.modern-products {
@@ -830,7 +876,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  background: #ededed;
+ /* background: #ededed; */
   padding: 14px 18px 10px 18px;
   max-width: 1100px;
   margin: 0 auto;
