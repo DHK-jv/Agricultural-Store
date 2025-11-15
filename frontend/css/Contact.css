@@ -71,3 +71,39 @@ body {
     padding: 60px 8px 24px 8px;
   }
 }
+
+/* Contact form styles */
+.contact-map {
+  border: 0;
+  border-radius: 8px;
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #388e3c;
+  box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+}
+
+.contact-result {
+  margin-top: 16px;
+  color: green;
+}
+
+.contact-result.error {
+  color: #e53935;
+}

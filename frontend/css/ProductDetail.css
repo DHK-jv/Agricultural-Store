@@ -61,7 +61,12 @@
 }
 
 /* Thông tin sản phẩm */
-.product-info h2 {
+.product-info {
+  flex: 1;
+}
+
+.product-info h2,
+.product-title {
   color: #388e3c;
   margin-bottom: 12px;
 }
@@ -83,6 +88,7 @@
 }
 
 /* Nút thêm vào giỏ */
+.btn-add-to-cart,
 .product-info button {
   background: #388e3c;
   color: white;
@@ -94,6 +100,7 @@
   transition: 0.2s ease;
 }
 
+.btn-add-to-cart:hover,
 .product-info button:hover {
   background: #2e7030;
   transform: translateY(-2px);
